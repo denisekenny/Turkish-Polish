@@ -1,0 +1,44 @@
+Lesson Five: Verbs 4
+
+to feel           = hissetmek
+I feel            = hissediyorum
+
+to need           = ihtiyaç duymak
+I need            = ihtiyacım
+
+to stand          = durmak
+I am standing     = duruyorum
+
+to watch          = izlemek
+I am watching     = izliyorum
+
+to stop           = durdurmak
+I am stopping     = duruyorum
+Stop!             = durdurmak!
+
+to allow          = izin vermek
+it is allowed     = izin verilir
+I allow it        = izin veriyorum
+
+to send           = göndermek
+send it           = gönder
+I sent it         = onu gönderdim
+I will send it    = göndereceğim
+
+to suggest        = önermek
+I suggested it    = önerdim
+I will suggest it = önereceğim
+ 
+to kill           = öldürmek
+I am killing      = öldürüyorum
+I killed          = öldürdüm
+
+to decide         = karar vermek
+I am deciding     = karar veriyorum
+I decided         = karar verdim
+
+to make           = etmek
+I am making       = ediyorum
+
+to dance          = dans etmek
+I am dancing      = dans ediyorum

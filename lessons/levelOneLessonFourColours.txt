@@ -1,0 +1,20 @@
+While you're practicing numbers, here's a light lesson on colours.
+It's fun. When looking around you, try to name the colours in Turkish!
+
+Lesson Four: Colours
+
+colour    = renk
+red       = kırmızı
+yellow    = sarı
+blue      = mavi
+orange    = turuncu
+green     = yeşil
+purple    = mor
+white     = beyaz
+black     = siyah
+grey      = gri
+navy      = lacivert
+brown     = kahverengi
+pink      = pembe
+rainbow   = gökuşağı
+colourful = rengarenk

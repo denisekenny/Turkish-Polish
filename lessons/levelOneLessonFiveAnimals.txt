@@ -1,0 +1,39 @@
+Ready to learn some basic animals?
+
+Lesson Five: Animals
+
+English       Turkish
+animal      = hayvan
+cat         = kedi
+dog         = köpek
+bird        = kuş
+fish        = balık
+duck        = ördek
+bear        = ayı
+rabbit      = tavşan
+lion        = aslan
+monkey      = maymun
+squirrel    = sincap
+snake       = yılan
+jellyfish   = denızanası
+mouse       = fare
+elephant    = fıl
+pig         = domuz
+sheep       = koyun
+chicken     = tavuk
+owl         = baykuş
+turtle      = kuplumbağa
+horse       = at
+spider      = örümcek
+
+Here's how to make them plural!
+In English you add an "s",
+In Turkish you add a "ler" or "lar" depending on vowels
+
+Words whose last vowel is (a, ı, o, u) gets "lar"
+Words whose last vowel is (e, i, ö, ü) gets "ler"
+
+For example,
+elephants = fıller
+
+Got it?

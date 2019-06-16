@@ -1,0 +1,28 @@
+It was a big lesson so it's split in two!
+Take it little by little, you'll get there
+
+Lesson 2: Occupations 2
+
+English          Turkish
+athlete        = koşucu
+farmer         = çiftçi
+engineer       = mühendis
+lawyer         = avukat
+carpenter      = marangoz
+clown          = palyaço
+magician       = sihirbaz
+painter        = ressam
+artist         = sanatçı
+photographer   = fotoğrafçı
+professor      = profesör
+scientist      = bilim adamı
+builder        = inşaat işçisi
+postman        = postacı
+businessman    = işadamı
+chef           = aşçıbaşı
+reporter       = muhabir
+journalist     = gazeteci
+taxi driver    = taksi sürücü
+musician       = müzisyen
+
+Ahhhh you are all done occupations!

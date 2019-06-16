@@ -1,0 +1,30 @@
+Welcome to the final Level!
+Happy learning!
+
+Lesson One: Occupations 1
+
+English          Turkish
+mechanic       = makina ustası
+pilot          = pilot
+actor          = aktör
+singer         = şarkıcı
+architect      = mimar
+accountant     = muhasebeci
+secretary      = sekreter
+soldier        = asker
+fire-fighter   = itfaiyeci
+officer        = memur
+police officer = polis memuru
+fisherman      = balıkçı
+sailor         = denizci
+captain        = gemi kaptanı
+astronaut      = astronot
+waiter         = garson
+dentist        = dişçi
+doctor         = doktor
+electrician    = elektrikçi
+surgeon        = cerrah
+student        = oğrenci
+teacher        = oğretmen
+
+Feel ready for the test?

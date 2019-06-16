@@ -1,0 +1,25 @@
+Lesson Three: Clothes
+
+English    Turkish
+Clothes  = çamaşırlar
+Shirt    = gömlek
+Pants    = pantolon
+Socks    = çorap
+Shoes    = ayakkabı
+Hat      = şapka
+Glasses  = gözlük
+Skirt    = etek
+Suit     = takım elbise
+Dress    = elbise
+Tie      = kravat
+Jacket   = ceket
+Gloves   = eldiven
+Tuque    = yün bere
+Scarf    = eşarp
+Purse    = çanta
+Necklace = kolye
+Bracelet = bilezik
+Ring     = halka
+Watch    = izlemek
+
+Nice and quick, very handy

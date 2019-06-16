@@ -1,0 +1,39 @@
+Lesson 4: Food 2
+
+You learned the basics, let's get to the ones that didn't make the cut for the first lesson,
+And the unusual ones!
+
+English           Turkish
+egg             = yumurta
+butter          = tereyağı
+oil             = yağ
+carrot          = havuç
+salad           = salata
+yogurt          = yoğurt
+cheese          = peynir
+fish            = balık
+ketchup         = ketçap
+pudding         = puding
+turkish delight = lokum
+grapefruit      = greyfurt
+pineapple       = ananas
+melon           = kavun
+coconut         = hindistan cevizi
+pomegranate     = nar
+avocado         = avokado
+kiwi            = kivi kuşu
+plum            = erik
+pickle          = kornişon
+chocolate       = çikolata
+cauliflower     = karnıbahar
+radish          = turp
+squash          = kabak
+cinnamon        = tarçın
+soda pop        = gazoz
+pistachio       = fıstık
+hazelnut        = fındık
+corn            = mısır
+
+breakfast       = kahvaltı
+lunch           = öğle yemeği
+dinner          = akşam yemegi

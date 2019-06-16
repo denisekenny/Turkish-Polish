@@ -1,0 +1,39 @@
+Lesson Three: Negation
+
+How do you say someone is not an adjective in Turkish?
+Lets take happy,
+English           Turkish
+He is happy     = mutlu
+I am happy      = mutluyum
+He is not happy = mutlu değil
+I am not happy  = mutlu değilim
+
+So you take the unconjugated or third person conjugated adjective,
+put değil after which means not,
+then if necessary conjugate değil to the person with the same im in - iz siniz ler rule
+
+How do you say there isn't something?
+English                 Turkish
+There are flowers     = çiçekler var
+There are not flowers = çiçekler yok
+
+How do you say you do the opposite of a verb?
+English             Turkish
+I am swimming     = yüzüyorum
+I am not swimming = yüzüyor değilim
+I am not swimming = yüzmüyorum
+
+The most common way is to add a m somewhere in the verb, see these examples:
+English            Turkish
+I am not walking    = yürüyemiyorum
+I am not running    = koşmuyorum
+I did not see that  = bunu görmedim
+I was not listening = dinlemiyordum
+I do not know       = bilmiyorum
+I am not looking    = bakmıyorum
+I do not want       = istemiyorum
+I do not love       = sevmiyorum
+I am not working    = çalışmıyorum
+I am not going      = gitmiyorum
+I am not buying     = almıyorum
+I am not waiting    = beklemiyorum

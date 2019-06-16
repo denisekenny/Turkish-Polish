@@ -1,0 +1,24 @@
+Lesson Four: Days of the Week
+
+Sunday    = pazar
+Monday    = pazartesi
+Tuesday   = salı
+Wednesday = çarşamba
+Thursday  = perşembe
+Friday    = cuma
+Saturday  = cumartesi
+
+As a bonus here is some other time related words:
+
+second    = saniye
+minute    = dakika
+hour      = saat
+day       = gün
+today     = bügün
+tomorrow  = yarın
+yesterday = dün
+week      = hafta
+month     = ay
+year      = yıl
+
+Having fun!?

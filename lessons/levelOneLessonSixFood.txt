@@ -1,0 +1,40 @@
+Animals was a big lesson, I hope you're ready for another one!
+But here's some good news! This is the last lesson in level one!
+You made it this far! You can do it!
+
+Lesson six: Food
+
+English       Turkish
+fruit       = meyve
+apple       = elma
+banana      = muz
+pear        = armut
+cherry      = kiraz
+strawberry  = çilek
+lemon       = limon
+orange      = portakal
+grape       = üzüm
+watermelon  = karpuz
+fig         = incir
+vegetable   = sebze
+spinach     = ispanak
+eggplant    = patlıcan
+mushrooms   = mantar
+garlic      = sarımsak
+artichoke   = enginar
+olive       = zeytin
+tomato      = domates
+potato      = patates
+pepper      = biber
+milk        = süt
+water       = su
+bread       = ekmek
+ice cream   = dondurma
+meat        = et
+coffee      = kahve
+tea         = çay
+cake        = pasta
+pasta       = makarna
+rice        = pilav
+
+Congratulations on finishing Level One!
