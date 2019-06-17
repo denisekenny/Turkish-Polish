@@ -1,0 +1,31 @@
+fruit—meyve-0-0
+apple-elma-0-0
+banana-muz-0-0
+pear-armut-0-0
+cherry-kiraz-0-0
+strawberry-çilek-0-0
+lemon-limon-0-0
+orange-portakal-0-0
+grape-üzüm-0-0
+watermelon-karpuz-0-0
+fig-incir-0-0
+vegetable-sebze-0-0
+spinach-ispanak-0-0
+eggplant-patlıcan-0-0
+mushrooms-mantar-0-0
+garlic-sarımsak-0-0
+artichoke-enginar-0-0
+olive-zeytin-0-0
+tomato-domates-0-0
+potato-patates-0-0
+pepper-biber-0-0
+milk-süt-0-0
+water-su-0-0
+bread-ekmek-0-0
+ice cream-dondurma-0-0
+meat-et-0-0
+coffee-kahve-0-0
+tea-çay-0-0
+cake-pasta-0-0
+pasta-makarna-0-0
+rice", "pilav

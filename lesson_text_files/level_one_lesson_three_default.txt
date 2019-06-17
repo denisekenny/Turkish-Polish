@@ -1,0 +1,24 @@
+number—sayı-0-0
+zero-sıfır-0-0
+one-bir-0-0
+Two-iki-0-0
+three-üç-0-0
+four-dört-0-0
+five-beş-0-0
+six-altı-0-0
+seven-yedi-0-0
+eight-sekiz-0-0
+nine-dokuz-0-0
+ten-on-0-0
+eleven-on bir-0-0
+fifty two-elli iki-0-0
+twenty three-yirmi üç-0-0
+forty four-kırk dört-0-0
+seventy five-yetmiş beş-0-0
+thirty six-otuz altı-0-0
+eighty seven-seksen yedi-0-0
+sixty eight-altmış sekiz-0-0
+ninety nine-doksan dokuz-0-0
+one hundred sixty three-yüz altmış üç-0-0
+one thousand-bin-0-0
+one million-milyon-0-0

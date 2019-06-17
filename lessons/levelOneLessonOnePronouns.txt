@@ -21,7 +21,7 @@ English   Turkish
 I             = ben
 you        = sen
 him/her = o
-us          = biz
+we          = biz
 you (pl)  = siz
 they       = onlar
 

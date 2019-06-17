@@ -1,0 +1,18 @@
+hello-merhaba-0-0
+Good bye-hoşça kal-0-0
+see you-görüşürüz-0-0
+how are you—nasılsın-0-0
+nice to meet you-memnun oldum-0-0
+please-lütfen-0-0
+thank you-teşekkür ederim-0-0
+you’re welcome-rica ederim-0-0
+thanks-teşekkürler-0-0
+excuse me-affedersin-0-0
+sorry-pardon-0-0
+welcome-hoş geliniz-0-0
+reply to welcome-hoş bulduk-0-0
+bon appetit-afiyet olsun-0-0
+good morning-günaydın-0-0
+good evening-iyi akşamlar-0-0
+good night-iyi geceler-0-0
+good luck-iyi şanslar-0-0
