@@ -1,0 +1,21 @@
+cousin-kuzen-0-0
+wife-eş-0-0
+husband-koca-0-0
+spouse-eş-0-0
+boyfriend-sevgili-0-0
+girlfriend-sevgili-0-0
+friend-arkadaş-0-0
+brother in law-enişte-0-0
+sister in law-yenge-0-0
+wife's sister-baldız-0-0
+father in law-kayın baba-0-0
+mother in law-kaynana-0-0
+ex husband-eski koca-0-0
+ex wife-eski eş-0-0
+step mother-üvey anne-0-0
+step father-kayınpeder-0-0
+step child-üvey çocuk-0-0
+step daughter-üvey kız-0-0
+step son-üvey oğul-0-0
+half brother-üvey erkek kardeş-0-0
+half sister-üvey kız kardeş-0-0

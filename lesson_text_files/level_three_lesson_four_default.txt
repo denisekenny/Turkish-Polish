@@ -1,0 +1,32 @@
+egg-yumurta-0-0
+butter-tereyağı-0-0
+oil-yağ-0-0
+carrot-havuç-0-0
+salad-salata-0-0
+yogurt-yoğurt-0-0
+cheese-peynir-0-0
+fish-balık-0-0
+ketchup-ketçap-0-0
+pudding-puding-0-0
+turkish delight-lokum-0-0
+grapefruit-greyfurt-0-0
+pineapple-ananas-0-0
+melon-kavun-0-0
+coconut-hindistan cevizi-0-0
+pomegranate-nar-0-0
+avocado-avokado-0-0
+kiwi-kivi kuşu-0-0
+plum-erik-0-0
+pickle-kornişon-0-0
+chocolate-çikolata-0-0
+cauliflower-karnıbahar-0-0
+radish-turp-0-0
+squash-kabak-0-0
+cinnamon-tarçın-0-0
+soda pop-gazoz-0-0
+pistachio-fıstık-0-0
+hazelnut-fındık-0-0
+corn-mısır-0-0
+breakfast-kahvaltı-0-0
+lunch-öğle yemeği-0-0
+dinner-akşam yemeği-0-0

@@ -1,0 +1,21 @@
+family-aile-0-0
+mom-anne-0-0
+dad-baba-0-0
+parent-ebeveyn-0-0
+grandma (maternal)-anneanne-0-0
+grandma (paternal)-babaanne-0-0
+grandpa-dede-0-0
+son-oğul-0-0
+daughter-kız-0-0
+child-çocuk-0-0
+grand daughter-kız torun-0-0
+grand son-erkek torun-0-0
+grand child-torun-0-0
+sister-kız kardeş-0-0
+brother-erkek kardeş-0-0
+sibling-kardeş-0-0
+niece/nephew-yeğen-0-0
+aunt (maternal)-teyze-0-0
+uncle (paternal)-dayı-0-0
+aunt (paternal)-hala-0-0
+uncle (paternal)-amca-0-0

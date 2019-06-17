@@ -1,0 +1,24 @@
+llama-lama-0-0
+hedgehog-kirpi-0-0
+dolphin-yunus-0-0
+shrimp-karides-0-0
+whale-balina-0-0
+shark-köpekbelığı-0-0
+octopus-ahtapot-0-0
+giraffe-zürafa-0-0
+fox-tilki-0-0
+crocodile-timsah-0-0
+butterfly-kelebek-0-0
+bug-böcek-0-0
+ladybug-uğur böceği-0-0
+worm-solucan-0-0
+wolf-kurt-0-0
+grasshopper-çekirge-0-0
+fly-sinek-0-0
+penguin-penguen-0-0
+bee-arı-0-0
+crab-yengeç-0-0
+aardvark-yerdomuzu-0-0
+stingray-iğneli vatoz-0-0
+frog-kurbağa-0-0
+goat-keçi-0-0

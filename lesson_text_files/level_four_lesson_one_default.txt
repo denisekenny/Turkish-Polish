@@ -1,0 +1,22 @@
+mechanic-makina ustası-0-0
+pilot-pilot-0-0
+actor-aktör-0-0
+singer-şarkıcı-0-0
+architect-mimar-0-0
+accountant-muhasebeci-0-0
+secretary-sekreter-0-0
+soldier-asker-0-0
+fire fighter-itfaiyeci-0-0
+officer-memur-0-0
+police officer-polis memuru-0-0
+fisherman-balıkçı-0-0
+sailor-denizci-0-0
+captain-gemi kaptanı-0-0
+astronaut-astronot-0-0
+waiter-garson-0-0
+dentist-dişçi-0-0
+doctor-doktor-0-0
+electrician-elektrikçi-0-0
+surgeon-cerrah-0-0
+student-oğrenci-0-0
+teacher-oğretmen-0-0

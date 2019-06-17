@@ -1,0 +1,17 @@
+sunday-pazar-0-0
+monday-pazartesi-0-0
+tuesday-salı-0-0
+wednesday-çarşamba-0-0
+thursday-perşembe-0-0
+friday-cuma-0-0
+saturday-cumartesi-0-0
+one second-bir saniye-0-0
+minute-dakika-0-0
+hour-saat-0-0
+day-gün-0-0
+today-bügün-0-0
+tomorrow-yarın-0-0
+yesterday-dün-0-0
+week-hafta-0-0
+month-ay-0-0
+year-yıl-0-0

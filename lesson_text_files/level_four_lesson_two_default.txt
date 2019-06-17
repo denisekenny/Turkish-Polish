@@ -1,0 +1,20 @@
+athlete-koşucu-0-0
+farmer-çiftçi-0-0
+engineer-mühendis-0-0
+lawyer-avukat-0-0
+carpenter-marangoz-0-0
+clown-palyaço-0-0
+magician-sihirbaz-0-0
+painter-ressam-0-0
+artist-sanatçı-0-0
+photographer-fotoğrafçı-0-0
+professor-profesör-0-0
+scientist-bilim adamı-0-0
+builder-inşaat işçisi-0-0
+postman-postacı-0-0
+businessman-işadamı-0-0
+chef-aşçıbaşı-0-0
+reporter-muhabir-0-0
+journalist-gazeteci-0-0
+taxi driver-taksi sürücü-0-0
+musician-müzisyen-0-0

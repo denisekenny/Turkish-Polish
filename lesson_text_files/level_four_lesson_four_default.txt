@@ -1,0 +1,34 @@
+usually-genellikle-0-0
+completely-tamamen-0-0
+certainly-kesinlikle-0-0
+always-hep-0-0
+everytime-her zaman-0-0
+never-hiç-0-0
+rarely-nadiren-0-0
+generally-çoğunlukla-0-0
+frequently-sık sık-0-0
+often-çoğu kez-0-0
+sometimes-bazen-0-0
+just-sadece-0-0
+extremely-son derece-0-0
+quite-oldukça-0-0
+very-çok-0-0
+almost-neredeyse-0-0
+now-şimdi-0-0
+from now on-artık-0-0
+later-sonra-0-0
+soon-az sonra-0-0
+behind-arkasında-0-0
+in front-önünde-0-0
+below-altında-0-0
+above-üstüne-0-0
+down-aşağıya-0-0
+up-yukarında-0-0
+inside-içeride-0-0
+outside-dışarıda-0-0
+enough-yeterli-0-0
+adequately-yeterince-0-0
+left-sol-0-0
+right-sağ-0-0
+because-çünkü-0-0
+if-şartla-0-0

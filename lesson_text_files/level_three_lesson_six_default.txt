@@ -1,0 +1,20 @@
+clothes-çamaşırlar-0-0
+shirt-gömlek-0-0
+pants-pantolon-0-0
+socks-çorap-0-0
+shoes-ayakkabı-0-0
+hat-şapka-0-0
+glasses-gözlük-0-0
+skirt-etek-0-0
+suit-takım elbise-0-0
+dress-elbise-0-0
+tie-kravat-0-0
+jacket-ceket-0-0
+gloves-eldiven-0-0
+tuque-yün bere-0-0
+scarf-eşarp-0-0
+purse-çanta-0-0
+necklace-kolye-0-0
+bracelet-bilezik-0-0
+ring-halka-0-0
+watch-izlemek-0-0

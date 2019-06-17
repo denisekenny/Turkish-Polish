@@ -1,0 +1,10 @@
+he is walking-yürüyor-0-0
+we are running-koşuyoruz-0-0
+you are eating-yiyorsunuz-0-0
+i am drinking-içiyorum-0-0
+they are reading-okuyorlar-0-0
+you are writing-yazıyorsun-0-0
+i am seeing-görüyorum-0-0
+i am smelling-kokluyorum-0-0
+he is saying-diyor-0-0
+we are listening-dinliyoruz-0-0
