@@ -21,10 +21,6 @@ public class Lessons
 			{
 				String currentLine = preferredFileBufferedReader.readLine();
 				String[] wordParameters = currentLine.split("-");
-				for(int i = 0; i < 4; i++)
-				{
-					wordParameters[i] = wordParameters[i].trim();
-				}
 				lessonWordList.add(new Word(wordParameters[0], wordParameters[1], Integer.parseInt(wordParameters[2]), Integer.parseInt(wordParameters[3])));
 			}
 			preferredFileBufferedReader.close();

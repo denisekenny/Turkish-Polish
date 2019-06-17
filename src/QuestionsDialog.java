@@ -293,6 +293,10 @@ public class QuestionsDialog extends JDialog {
 			lblCorrectionOne.setText(qOne.getAnswer());
 			lblCorrectionOne.setBorder(new LineBorder(Color.RED, 1));
 		}
+		else
+		{
+			lblCorrectionOne.setText("correct");
+		}
 	}
 	
 	protected void checkQTwo()
@@ -301,6 +305,10 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionTwo.setText(qTwo.getAnswer());
 			lblCorrectionTwo.setBorder(new LineBorder(Color.RED, 1));
+		}
+		else
+		{
+			lblCorrectionTwo.setText("correct");
 		}
 	}
 	
@@ -311,6 +319,10 @@ public class QuestionsDialog extends JDialog {
 			lblCorrectionThree.setText(qThree.getAnswer());
 			lblCorrectionThree.setBorder(new LineBorder(Color.RED, 1));
 		}
+		else
+		{
+			lblCorrectionThree.setText("correct");
+		}
 	}
 	
 	protected void checkQFour()
@@ -319,6 +331,10 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionFour.setText(qFour.getAnswer());
 			lblCorrectionFour.setBorder(new LineBorder(Color.RED, 1));
+		}
+		else
+		{
+			lblCorrectionFour.setText("correct");
 		}
 	}
 	
@@ -329,6 +345,10 @@ public class QuestionsDialog extends JDialog {
 			lblCorrectionFive.setText(qFive.getAnswer());
 			lblCorrectionFive.setBorder(new LineBorder(Color.RED, 1));
 		}
+		else
+		{
+			lblCorrectionFive.setText("correct");
+		}
 	}
 	
 	protected void checkQSix()
@@ -337,6 +357,10 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionSix.setText(qSix.getAnswer());
 			lblCorrectionSix.setBorder(new LineBorder(Color.RED, 1));
+		}
+		else
+		{
+			lblCorrectionSix.setText("correct");
 		}
 	}
 	
@@ -347,6 +371,10 @@ public class QuestionsDialog extends JDialog {
 			lblCorrectionSeven.setText(qSeven.getAnswer());
 			lblCorrectionSeven.setBorder(new LineBorder(Color.RED, 1));
 		}
+		else
+		{
+			lblCorrectionSeven.setText("correct");
+		}
 	}
 	
 	protected void checkQEight()
@@ -355,6 +383,10 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionEight.setText(qEight.getAnswer());
 			lblCorrectionEight.setBorder(new LineBorder(Color.RED, 1));
+		}
+		else
+		{
+			lblCorrectionEight.setText("correct");
 		}
 	}
 	
@@ -365,6 +397,10 @@ public class QuestionsDialog extends JDialog {
 			lblCorrectionNine.setText(qNine.getAnswer());
 			lblCorrectionNine.setBorder(new LineBorder(Color.RED, 1));
 		}
+		else
+		{
+			lblCorrectionNine.setText("correct");
+		}
 	}
 	
 	protected void checkQTen()
@@ -373,6 +409,10 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionTen.setText(qTen.getAnswer());
 			lblCorrectionTen.setBorder(new LineBorder(Color.RED, 1));
+		}
+		else
+		{
+			lblCorrectionTen.setText("correct");
 		}
 	}
 	

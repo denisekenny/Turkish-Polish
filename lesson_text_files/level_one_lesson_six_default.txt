@@ -1,4 +1,4 @@
-fruit—meyve-0-0
+fruit-meyve-0-0
 apple-elma-0-0
 banana-muz-0-0
 pear-armut-0-0
@@ -28,4 +28,4 @@ coffee-kahve-0-0
 tea-çay-0-0
 cake-pasta-0-0
 pasta-makarna-0-0
-rice", "pilav
+rice-pilav-0-0

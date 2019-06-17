@@ -1,11 +1,11 @@
 hello-merhaba-0-0
-Good bye-hoşça kal-0-0
+good bye-hoşça kal-0-0
 see you-görüşürüz-0-0
-how are you—nasılsın-0-0
+how are you-nasılsın-0-0
 nice to meet you-memnun oldum-0-0
 please-lütfen-0-0
 thank you-teşekkür ederim-0-0
-you’re welcome-rica ederim-0-0
+you're welcome-rica ederim-0-0
 thanks-teşekkürler-0-0
 excuse me-affedersin-0-0
 sorry-pardon-0-0
