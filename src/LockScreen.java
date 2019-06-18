@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Dialog.ModalityType;
 
@@ -6,34 +5,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.text.JTextComponent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.SystemColor;
-import java.awt.Dialog.ModalityType;
 
 import javax.swing.JTextField;
-import javax.swing.JRadioButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.DefaultComboBoxModel;
-import java.awt.event.ItemListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
 import java.awt.Color;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.InputMethodListener;
-import java.awt.event.InputMethodEvent;
-import java.beans.PropertyChangeListener;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -44,14 +25,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.beans.PropertyChangeEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
-import javax.swing.JSeparator;
+import javax.swing.UIManager;
 
 public class LockScreen extends JFrame {
 
 	private JPanel contentPane;
+	
 	private JTextField txtPasswordSignIn;
 	private JTextField txtUsernameSignUp;
 	private JTextField txtPasswordSignUp;
@@ -76,19 +57,16 @@ public class LockScreen extends JFrame {
 	private JLabel lblUsernameForgotPass;
 	private JLabel lblNewPasswordForgotPass;
 	private JLabel lblAnswerSecurityQuestionIndicator;
-	private JButton btnSignIn;
-	private JButton btnSignUpButton;
-	private JButton btnNewPassSignIn;
 	private JLabel lblWarningSecurityOne;
 	private JLabel lblWarningSecurityTwo;
 	
-	private SelectLevel selectingLevel;
+	private JButton btnSignIn;
+	private JButton btnSignUpButton;
+	private JButton btnNewPassSignIn;
 	
+	private SelectLevel selectingLevel;
 	private WrongSignInInfo incorrectPopUp;
 	private UsernamePassword accounts;
-	private JButton btnReset = new JButton("Reset");
-	
-	private ResetAllDialog resetAllDialog;
 
 	/**
 	 * Launch the application.
@@ -117,7 +95,7 @@ public class LockScreen extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 825, 500);
 		contentPane = new JPanel();
-		contentPane.setBackground(SystemColor.activeCaption);
+		contentPane.setBackground(UIManager.getColor("FormattedTextField.selectionBackground"));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -183,8 +161,10 @@ public class LockScreen extends JFrame {
 		contentPane.add(lblSecurityQuestion);
 		
 		txtUsernameSignIn = new JTextField();
-		txtUsernameSignIn.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtUsernameSignIn.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -194,8 +174,10 @@ public class LockScreen extends JFrame {
 		txtUsernameSignIn.setColumns(10);
 		
 		txtPasswordSignIn = new JTextField();
-		txtPasswordSignIn.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtPasswordSignIn.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -205,8 +187,10 @@ public class LockScreen extends JFrame {
 		txtPasswordSignIn.setColumns(10);
 		
 		txtUsernameSignUp = new JTextField();
-		txtUsernameSignUp.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtUsernameSignUp.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -216,8 +200,10 @@ public class LockScreen extends JFrame {
 		txtUsernameSignUp.setColumns(10);
 		
 		txtPasswordSignUp = new JTextField();
-		txtPasswordSignUp.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtPasswordSignUp.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -227,8 +213,10 @@ public class LockScreen extends JFrame {
 		txtPasswordSignUp.setColumns(10);
 		
 		txtSecurityQuestionAnswer = new JTextField();
-		txtSecurityQuestionAnswer.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtSecurityQuestionAnswer.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -238,8 +226,10 @@ public class LockScreen extends JFrame {
 		txtSecurityQuestionAnswer.setColumns(10);
 		
 		txtUsernameForgotPass = new JTextField();
-		txtUsernameForgotPass.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtUsernameForgotPass.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -249,8 +239,10 @@ public class LockScreen extends JFrame {
 		txtUsernameForgotPass.setColumns(10);
 		
 		txtNewPasswordForgotPass = new JTextField();
-		txtNewPasswordForgotPass.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtNewPasswordForgotPass.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -260,8 +252,10 @@ public class LockScreen extends JFrame {
 		contentPane.add(txtNewPasswordForgotPass);
 		
 		txtSecurityQuestionAnswerForgotPass = new JTextField();
-		txtSecurityQuestionAnswerForgotPass.addCaretListener(new CaretListener() {
-			public void caretUpdate(CaretEvent e) {
+		txtSecurityQuestionAnswerForgotPass.addCaretListener(new CaretListener()
+		{
+			public void caretUpdate(CaretEvent e)
+			{
 				textFieldTextChanged(e);
 			}
 		});
@@ -286,8 +280,10 @@ public class LockScreen extends JFrame {
 		contentPane.add(lblAnswerSecurityQuestionIndicator);
 		
 		btnSignIn = new JButton("Welcome Back");
-		btnSignIn.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e){
+		btnSignIn.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				btnSignInMouseClicked(e);
 			}
 		});
@@ -298,8 +294,10 @@ public class LockScreen extends JFrame {
 		
 		btnSignUpButton = new JButton("Let's get started!");
 		btnSignUpButton.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-		btnSignUpButton.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e){
+		btnSignUpButton.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				btnSignUpButtonMouseClicked(e);
 			}
 		});
@@ -308,8 +306,10 @@ public class LockScreen extends JFrame {
 		contentPane.add(btnSignUpButton);
 		
 		btnNewPassSignIn = new JButton("I'll try not to forget again!");
-		btnNewPassSignIn.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e){
+		btnNewPassSignIn.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				btnNewPassSignInMouseClicked(e);
 			}
 		});
@@ -331,16 +331,6 @@ public class LockScreen extends JFrame {
 		lblWarningSecurityTwo.setBorder(new LineBorder(Color.RED, 1));
 		lblWarningSecurityTwo.setVisible(false);
 		contentPane.add(lblWarningSecurityTwo);
-		btnReset.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				resetBtnClick(e);
-				
-			}
-		});
-		btnReset.setBounds(663, 438, 130, 34);
-		contentPane.add(btnReset);
-		btnReset.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 	}
 	
 	protected void getAccountsFromTextFile()
@@ -360,20 +350,12 @@ public class LockScreen extends JFrame {
 		}
 		catch (FileNotFoundException fnfe)
 		{
-			System.out.println("this should not happen");
+			System.out.println("A file not found exception in the getAccountsFromTextFile method from the lock screen class");
 		}
 		catch(IOException ioe)
 		{
-			System.out.println("AN IOEXCEPTION OCCURRED");
+			System.out.println("An IO exception in the getAccountsFromTextFile method from the lock screen class");
 		}
-	}
-	
-	
-	protected void resetBtnClick(MouseEvent e)
-	{
-		resetAllDialog = new ResetAllDialog();
-		resetAllDialog.setLocationRelativeTo(this);
-		resetAllDialog.setVisible(true);
 	}
 	
 	protected void btnSignInMouseClicked(MouseEvent e)
@@ -402,9 +384,7 @@ public class LockScreen extends JFrame {
 		{
 			return;
 		}
-		
-		boolean cannotGetIn = makeThePopUp(2);
-		if (cannotGetIn)
+		if (makeThePopUp(2))
 		{
 			return;
 		}
@@ -412,19 +392,19 @@ public class LockScreen extends JFrame {
 		{
 			Account accountToAdd = new Account(txtUsernameSignUp.getText(), txtPasswordSignUp.getText(), txtSecurityQuestionAnswer.getText());
 			accounts.addAccount(accountToAdd);
-			
 			updateTextFileSignUp(accountToAdd);
 			
 			selectingLevel = new SelectLevel(accountToAdd);
 			selectingLevel.setLocationRelativeTo(this);
 			selectingLevel.setVisible(true);
 			this.setVisible(false);
+			
 		}
 	}
 	
-	protected void updateTextFileSignUp(Account accountToAdd)
+	private void updateTextFileSignUp(Account accountToAdd)
 	{
-		//add a line to the text file adding the accountToAdd
+		//Resource used:
 		//https://stackoverflow.com/questions/4614227/how-to-add-a-new-line-of-text-to-an-existing-file-in-java/9377891
 		String securityQA = accountToAdd.getAnswer();
 		if (securityQA.equals(""))
@@ -437,16 +417,13 @@ public class LockScreen extends JFrame {
 			Writer output = new BufferedWriter(new FileWriter("accounts/" + "all_the_accounts.txt", true));
 			output.append('\n');
 			output.append(lineToAdd);
-			//output.append('\n');
 			output.close();
 		}
 		catch (Exception e)
 		{
-			System.out.println("error accessing the file");
+			System.out.println("Could not access the file");
 		}
-		
 	}
-
 	
 	protected void btnNewPassSignInMouseClicked(MouseEvent e)
 	{
@@ -454,7 +431,6 @@ public class LockScreen extends JFrame {
 		{
 			return;
 		}
-		
 		if (makeThePopUp(3))
 		{
 			return;
@@ -474,7 +450,7 @@ public class LockScreen extends JFrame {
 	
 	private void updateTextFileNewPass(String username, String newPassword, String answer)
 	{
-		//change the line of the old account to this new password one
+		//Resource used to change a line in a text file:
 		//https://stackoverflow.com/questions/20039980/java-replace-line-in-text-file
 		try
 		{
@@ -500,18 +476,18 @@ public class LockScreen extends JFrame {
 		}
 	    catch (Exception e)
 		{
-	        System.out.println("Problem reading file.");
+	        System.out.println("Could not access the file");
 	    }
 	}
 	
-	private boolean makeThePopUp(int number)
+	private boolean makeThePopUp(int logInCase)
 	{
 		String line1 = "";
 		String line2 = "" ;
 		String suggestedUsername = "";
 		boolean needsThePopUp = false;
 		
-		if (number == 1)
+		if (logInCase == 1)
 		{
 			String inputUsername = txtUsernameSignIn.getText();
 			String inputPassword = txtPasswordSignIn.getText();
@@ -529,21 +505,18 @@ public class LockScreen extends JFrame {
 				line2 = "Remember passwords are case sensitive.";
 			}
 		}
-		else if (number == 2)
+		else if (logInCase == 2)
 		{
 			String inputUsername = txtUsernameSignUp.getText();
-			String inputPassword = txtPasswordSignUp.getText();
-			String securityQuestionAnswer = txtSecurityQuestionAnswer.getText();
 			if (accounts.usernameExists(inputUsername))
 			{
 				needsThePopUp = true;
 				line1 = "That username was already chosen.";
 				line2 = "How about this one as an alternative?";
 				suggestedUsername = accounts.getSuggestedUsername(inputUsername);
-				
 			}
 		}
-		else if (number == 3)
+		else if (logInCase == 3)
 		{
 			String inputUsername = txtUsernameForgotPass.getText();
 			String inputPassword = txtNewPasswordForgotPass.getText();
@@ -558,7 +531,7 @@ public class LockScreen extends JFrame {
 			else if (!(accounts.usernameExists(inputUsername)))
 			{
 				needsThePopUp = true;
-				line1 = "There isn't an account with that username so...";
+				line1 = "There isn't an account with that username.";
 			}
 			else if (!(accounts.canItSetPassword(inputUsername, inputPassword, securityQuestionAnswer)))
 			{
@@ -575,7 +548,6 @@ public class LockScreen extends JFrame {
 			incorrectPopUp.setModalityType(ModalityType.APPLICATION_MODAL);
 			incorrectPopUp.setVisible(true);
 		}
-		
 		return needsThePopUp;
 	}
 	
@@ -619,6 +591,5 @@ public class LockScreen extends JFrame {
 		{
 			btnNewPassSignIn.setEnabled(false);
 		}
-		
 	}
 }

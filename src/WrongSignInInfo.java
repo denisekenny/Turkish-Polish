@@ -73,5 +73,4 @@ public class WrongSignInInfo extends JDialog {
 	{
 		this.setVisible(false);
 	}
-
 }

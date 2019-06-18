@@ -1,7 +1,7 @@
-//This code is NOT mine
-//I took it from stack overflow because it didn't seem necessary that I redo it
+//I did NOT write this code
+//I took this class from stack overflow because it didn't seem necessary that I redo it
 //It takes an int number and converts it to a String
-//ex. 56 to fifty six
+//ex. 56 to "fifty six"
 //https://stackoverflow.com/questions/3911966/how-to-convert-number-to-words-in-java
 import java.text.DecimalFormat;
 

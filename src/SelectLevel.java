@@ -1,4 +1,3 @@
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
@@ -37,9 +36,7 @@ public class SelectLevel extends JFrame {
 	private LevelTwoLessonSelect levelTwoSelect;
 	private LevelThreeLessonSelect levelThreeSelect;
 	private LevelFourLessonSelect levelFourSelect;
-	
 	private QuestionsDialogCustomized customTest;
-	
 	private Account user;
 
 	/**
@@ -53,8 +50,6 @@ public class SelectLevel extends JFrame {
 		levelTwoSelect = new LevelTwoLessonSelect(userAttemptingThisLesson);
 		levelThreeSelect = new LevelThreeLessonSelect(userAttemptingThisLesson);
 		levelFourSelect = new LevelFourLessonSelect(userAttemptingThisLesson);
-		
-		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 475, 475);
@@ -190,11 +185,11 @@ public class SelectLevel extends JFrame {
 		}
 		catch(FileNotFoundException fnfe)
 		{
-			
+			System.out.println("error in the SelectLevelClass");
 		}
 		catch(IOException ioe)
 		{
-			
+			System.out.println("error in the SelectLevelClass");
 		}
 		
 		return textFile;
@@ -265,4 +260,3 @@ public class SelectLevel extends JFrame {
 		customTest.setVisible(true);
 	}
 }
-

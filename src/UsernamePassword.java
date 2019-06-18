@@ -32,7 +32,6 @@ public class UsernamePassword
 		this.addAccount(newAccount);
 	}
 	
-	//I am proud to say this works!
 	public String getSuggestedUsername(String originalUsername)
 	{
 		String username = originalUsername;
@@ -109,7 +108,7 @@ public class UsernamePassword
 		return this.getAccount(username).getAnswer();
 	}
 	
-	//uppercase and lower case matters for username and password
+	//upper case and lower case matters for usernames and passwords
 	public boolean checkPassword(String username, String password)
 	{
 		int index = this.getIndex(username);
@@ -199,18 +198,5 @@ public class UsernamePassword
 		}
 		
 		return canIt;
-	}
-	
-	//If the answer is left blank this happens:
-	//thisismyusername3, password123, ;
-	//I think its okie
-	public String arrayToString()
-	{
-		String array = "";
-		for (Account account : allAccounts)
-		{
-			array = array + account.getUsername() + ", " + account.getPassword() + ", " + account.getAnswer() + "; ";
-		}
-		return array;
 	}
 }

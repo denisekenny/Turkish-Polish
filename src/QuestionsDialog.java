@@ -13,7 +13,6 @@ import javax.swing.border.LineBorder;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class QuestionsDialog extends JDialog {
@@ -45,10 +44,6 @@ public class QuestionsDialog extends JDialog {
 	private JLabel lblQNine;
 	private JLabel lblQTen;
 	
-	private int level;
-	private int lesson;
-	private Lesson theLessonForTheQuestions;
-	
 	private Question qOne;
 	private Question qTwo;
 	private Question qThree;
@@ -59,6 +54,7 @@ public class QuestionsDialog extends JDialog {
 	private Question qEight;
 	private Question qNine;
 	private Question qTen;
+	
 	private JLabel lblCorrectionOne;
 	private JLabel lblCorrectionTwo;
 	private JLabel lblCorrectionThree;
@@ -71,16 +67,19 @@ public class QuestionsDialog extends JDialog {
 	private JLabel lblCorrectionTen;
 	
 	private Account userAttemptingThisLesson;
+	private int level;
+	private int lesson;
+	private ArrayList<Word> theLessonForTheQuestions;
 
 	/**
 	 * Create the dialog.
 	 */
-	public QuestionsDialog(String lessonName, int level, int lesson, Account paramUserAttemptingThisLesson) {
-		
+	public QuestionsDialog(String lessonName, int level, int lesson, Account paramUserAttemptingThisLesson)
+	{
 		userAttemptingThisLesson = paramUserAttemptingThisLesson;
-		
 		this.level = level;
 		this.lesson = lesson;
+		
 		getLesson();
 		if ((level == 1) && (lesson == 3))
 		{
@@ -91,7 +90,6 @@ public class QuestionsDialog extends JDialog {
 			createQuestions();
 		}
 		
-		
 		setBounds(100, 100, 400, 650);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -100,167 +98,167 @@ public class QuestionsDialog extends JDialog {
 		{
 			
 			lblLessonReview = new JLabel("Lesson Review: " + lessonName);
-			lblLessonReview.setFont(new Font("Dialog", Font.PLAIN, 20));
+			lblLessonReview.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 20));
 			lblLessonReview.setBounds(10, 9, 364, 26);
 			contentPanel.add(lblLessonReview);
 			
 			lblQOne = new JLabel("1. " + qOne.giveQuestion());
-			lblQOne.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQOne.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQOne.setBounds(10, 50, 198, 14);
 			contentPanel.add(lblQOne);
 			
 			txtAOne = new JTextField();
-			txtAOne.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtAOne.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtAOne.setBounds(10, 70, 198, 20);
 			contentPanel.add(txtAOne);
 			txtAOne.setColumns(10);
 			
 			lblQTwo = new JLabel("2. " + qTwo.giveQuestion());
-			lblQTwo.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQTwo.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQTwo.setBounds(10, 100, 198, 14);
 			contentPanel.add(lblQTwo);
 			
 			lblQThree = new JLabel("3. " + qThree.giveQuestion());
-			lblQThree.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQThree.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQThree.setBounds(10, 150, 198, 14);
 			contentPanel.add(lblQThree);
 			
 			lblQFour = new JLabel("4. " + qFour.giveQuestion());
-			lblQFour.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQFour.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQFour.setBounds(10, 200, 198, 14);
 			contentPanel.add(lblQFour);
 			
 			lblQFive = new JLabel("5. " + qFive.giveQuestion());
-			lblQFive.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQFive.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQFive.setBounds(10, 250, 198, 14);
 			contentPanel.add(lblQFive);
 			
 			lblQSix = new JLabel("6. " + qSix.giveQuestion());
-			lblQSix.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQSix.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQSix.setBounds(10, 300, 198, 14);
 			contentPanel.add(lblQSix);
 			
 			lblQSeven = new JLabel("7. " + qSeven.giveQuestion());
-			lblQSeven.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQSeven.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQSeven.setBounds(10, 350, 198, 14);
 			contentPanel.add(lblQSeven);
 			
 			lblQEight = new JLabel("8. " + qEight.giveQuestion());
-			lblQEight.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQEight.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQEight.setBounds(10, 400, 198, 14);
 			contentPanel.add(lblQEight);
 			
 			lblQNine = new JLabel("9. " + qNine.giveQuestion());
-			lblQNine.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQNine.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQNine.setBounds(10, 450, 198, 14);
 			contentPanel.add(lblQNine);
 			
 			txtATwo = new JTextField();
-			txtATwo.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtATwo.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtATwo.setColumns(10);
 			txtATwo.setBounds(10, 120, 198, 20);
 			contentPanel.add(txtATwo);
 			
 			txtAThree = new JTextField();
-			txtAThree.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtAThree.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtAThree.setColumns(10);
 			txtAThree.setBounds(10, 170, 198, 20);
 			contentPanel.add(txtAThree);
 			
 			txtAFour = new JTextField();
-			txtAFour.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtAFour.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtAFour.setColumns(10);
 			txtAFour.setBounds(10, 220, 198, 20);
 			contentPanel.add(txtAFour);
 			
 			txtAFive = new JTextField();
-			txtAFive.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtAFive.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtAFive.setColumns(10);
 			txtAFive.setBounds(10, 270, 198, 20);
 			contentPanel.add(txtAFive);
 			
 			txtASix = new JTextField();
-			txtASix.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtASix.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtASix.setColumns(10);
 			txtASix.setBounds(10, 320, 198, 20);
 			contentPanel.add(txtASix);
 			
 			txtASeven = new JTextField();
-			txtASeven.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtASeven.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtASeven.setColumns(10);
 			txtASeven.setBounds(10, 370, 198, 20);
 			contentPanel.add(txtASeven);
 			
 			txtAEight = new JTextField();
-			txtAEight.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtAEight.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtAEight.setColumns(10);
 			txtAEight.setBounds(10, 420, 198, 20);
 			contentPanel.add(txtAEight);
 			
 			txtANine = new JTextField();
-			txtANine.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtANine.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtANine.setColumns(10);
 			txtANine.setBounds(10, 470, 198, 20);
 			contentPanel.add(txtANine);
 			
 			lblQTen = new JLabel("10. " + qTen.giveQuestion());
-			lblQTen.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblQTen.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblQTen.setBounds(10, 500, 198, 14);
 			contentPanel.add(lblQTen);
 
 			txtATen = new JTextField();
-			txtATen.setFont(new Font("Dialog", Font.PLAIN, 13));
+			txtATen.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			txtATen.setColumns(10);
 			txtATen.setBounds(10, 520, 198, 20);
 			contentPanel.add(txtATen);
 			
 			lblCorrectionOne = new JLabel("");
-			lblCorrectionOne.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionOne.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionOne.setBounds(220, 72, 121, 16);
 			contentPanel.add(lblCorrectionOne);
 			
 			lblCorrectionTwo = new JLabel("");
-			lblCorrectionTwo.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionTwo.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionTwo.setBounds(220, 120, 121, 16);
 			contentPanel.add(lblCorrectionTwo);
 			
 			lblCorrectionThree = new JLabel("");
-			lblCorrectionThree.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionThree.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionThree.setBounds(220, 172, 121, 16);
 			contentPanel.add(lblCorrectionThree);
 			
 			lblCorrectionFour = new JLabel("");
-			lblCorrectionFour.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionFour.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionFour.setBounds(220, 222, 121, 16);
 			contentPanel.add(lblCorrectionFour);
 			
 			lblCorrectionFive = new JLabel("");
-			lblCorrectionFive.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionFive.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionFive.setBounds(220, 272, 121, 16);
 			contentPanel.add(lblCorrectionFive);
 			
 			lblCorrectionSix = new JLabel("");
-			lblCorrectionSix.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionSix.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionSix.setBounds(220, 322, 121, 16);
 			contentPanel.add(lblCorrectionSix);
 			
 			lblCorrectionSeven = new JLabel("");
-			lblCorrectionSeven.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionSeven.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionSeven.setBounds(220, 372, 121, 16);
 			contentPanel.add(lblCorrectionSeven);
 			
 			lblCorrectionEight = new JLabel("");
-			lblCorrectionEight.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionEight.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionEight.setBounds(220, 422, 121, 16);
 			contentPanel.add(lblCorrectionEight);
 			
 			lblCorrectionNine = new JLabel("");
-			lblCorrectionNine.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionNine.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionNine.setBounds(220, 472, 121, 16);
 			contentPanel.add(lblCorrectionNine);
 			
 			lblCorrectionTen = new JLabel("");
-			lblCorrectionTen.setFont(new Font("Dialog", Font.PLAIN, 13));
+			lblCorrectionTen.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 			lblCorrectionTen.setBounds(220, 522, 121, 16);
 			contentPanel.add(lblCorrectionTen);
 			
@@ -269,8 +267,10 @@ public class QuestionsDialog extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				btnDone = new JButton("Done!");
-				btnDone.addMouseListener(new MouseAdapter() {
-					public void mouseClicked(MouseEvent e) {
+				btnDone.addMouseListener(new MouseAdapter()
+				{
+					public void mouseClicked(MouseEvent e)
+					{
 						if (btnDone.isEnabled())
 						{
 							buttonClicked(e);
@@ -297,7 +297,6 @@ public class QuestionsDialog extends JDialog {
 		checkQNine();
 		checkQTen();
 		btnDone.setEnabled(false);
-		
 	}
 	
 	protected void checkQOne()
@@ -313,7 +312,6 @@ public class QuestionsDialog extends JDialog {
 			lblCorrectionOne.setText("correct");
 			Lessons.updateCorrectAndIncorrect(level, lesson, lblQOne.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
-		
 	}
 	
 	protected void checkQTwo()
@@ -454,7 +452,7 @@ public class QuestionsDialog extends JDialog {
 	
 	protected void getLesson()
 	{
-		Lesson lessonArray = null;
+		ArrayList<Word> lessonArray = null;
 		if (level == 1)
 		{
 			if (lesson == 1)
@@ -563,17 +561,16 @@ public class QuestionsDialog extends JDialog {
 				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_six", userAttemptingThisLesson.getUsername(), 4, 6);
 			}
 		}
-		
 		theLessonForTheQuestions = lessonArray;
 	}
 	
 	private void createQuestions()
 	{
 		ArrayList<Integer> numUsed = new ArrayList<>();
-		int numWord = theLessonForTheQuestions.getArray().size();
+		int numWord = theLessonForTheQuestions.size();
 		
 		int randomOne = (int) (Math.random() * numWord); //gives a number between 0 and the last index
-		qOne = new Question(theLessonForTheQuestions.getArray().get(randomOne).getTurkish(), theLessonForTheQuestions.getArray().get(randomOne).getEnglish());
+		qOne = new Question(theLessonForTheQuestions.get(randomOne).getTurkish(), theLessonForTheQuestions.get(randomOne).getEnglish());
 		numUsed.add(randomOne);
 		
 		int randomTwo = (int) (Math.random() * numWord);
@@ -582,7 +579,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomTwo = newNum;
 		}
-		qTwo = new Question(theLessonForTheQuestions.getArray().get(randomTwo).getTurkish(), theLessonForTheQuestions.getArray().get(randomTwo).getEnglish());
+		qTwo = new Question(theLessonForTheQuestions.get(randomTwo).getTurkish(), theLessonForTheQuestions.get(randomTwo).getEnglish());
 		numUsed.add(randomTwo);
 		
 		int randomThree = (int) (Math.random() * numWord);
@@ -591,7 +588,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomThree = newNum;
 		}
-		qThree = new Question(theLessonForTheQuestions.getArray().get(randomThree).getTurkish(), theLessonForTheQuestions.getArray().get(randomThree).getEnglish());
+		qThree = new Question(theLessonForTheQuestions.get(randomThree).getTurkish(), theLessonForTheQuestions.get(randomThree).getEnglish());
 		numUsed.add(randomThree);
 		
 		int randomFour = (int) (Math.random() * numWord);
@@ -600,7 +597,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomFour = newNum;
 		}
-		qFour = new Question(theLessonForTheQuestions.getArray().get(randomFour).getTurkish(), theLessonForTheQuestions.getArray().get(randomFour).getEnglish());
+		qFour = new Question(theLessonForTheQuestions.get(randomFour).getTurkish(), theLessonForTheQuestions.get(randomFour).getEnglish());
 		numUsed.add(randomFour);
 		
 		int randomFive = (int) (Math.random() * numWord);
@@ -609,7 +606,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomFive = newNum;
 		}
-		qFive = new Question(theLessonForTheQuestions.getArray().get(randomFive).getTurkish(), theLessonForTheQuestions.getArray().get(randomFive).getEnglish());
+		qFive = new Question(theLessonForTheQuestions.get(randomFive).getTurkish(), theLessonForTheQuestions.get(randomFive).getEnglish());
 		numUsed.add(randomFive);
 		
 		int randomSix = (int) (Math.random() * numWord);
@@ -618,7 +615,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomSix = newNum;
 		}
-		qSix = new Question(theLessonForTheQuestions.getArray().get(randomSix).getTurkish(), theLessonForTheQuestions.getArray().get(randomSix).getEnglish());
+		qSix = new Question(theLessonForTheQuestions.get(randomSix).getTurkish(), theLessonForTheQuestions.get(randomSix).getEnglish());
 		numUsed.add(randomSix);
 		
 		int randomSeven = (int) (Math.random() * numWord);
@@ -627,7 +624,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomSeven = newNum;
 		}
-		qSeven = new Question(theLessonForTheQuestions.getArray().get(randomSeven).getTurkish(), theLessonForTheQuestions.getArray().get(randomSeven).getEnglish());
+		qSeven = new Question(theLessonForTheQuestions.get(randomSeven).getTurkish(), theLessonForTheQuestions.get(randomSeven).getEnglish());
 		numUsed.add(randomSeven);
 		
 		int randomEight = (int) (Math.random() * numWord);
@@ -636,7 +633,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomEight = newNum;
 		}
-		qEight = new Question(theLessonForTheQuestions.getArray().get(randomEight).getTurkish(), theLessonForTheQuestions.getArray().get(randomEight).getEnglish());
+		qEight = new Question(theLessonForTheQuestions.get(randomEight).getTurkish(), theLessonForTheQuestions.get(randomEight).getEnglish());
 		numUsed.add(randomEight);
 		
 		int randomNine = (int) (Math.random() * numWord);
@@ -645,7 +642,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomNine = newNum;
 		}
-		qNine = new Question(theLessonForTheQuestions.getArray().get(randomNine).getTurkish(), theLessonForTheQuestions.getArray().get(randomNine).getEnglish());
+		qNine = new Question(theLessonForTheQuestions.get(randomNine).getTurkish(), theLessonForTheQuestions.get(randomNine).getEnglish());
 		numUsed.add(randomNine);
 		
 		int randomTen = (int) (Math.random() * numWord);
@@ -654,17 +651,17 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomTen = newNum;
 		}
-		qTen = new Question(theLessonForTheQuestions.getArray().get(randomTen).getTurkish(), theLessonForTheQuestions.getArray().get(randomTen).getEnglish());
+		qTen = new Question(theLessonForTheQuestions.get(randomTen).getTurkish(), theLessonForTheQuestions.get(randomTen).getEnglish());
 		numUsed.add(randomTen);
 	}
 	
 	private void createQuestionsLevelOneLessonThreeNumbers()
 	{
 		ArrayList<Integer> numUsed = new ArrayList<>();
-		int numWord = theLessonForTheQuestions.getArray().size();
+		int numWord = theLessonForTheQuestions.size();
 		
 		int randomOne = (int) (Math.random() * numWord); //gives a number between 0 and the last index
-		qOne = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomOne).getTurkish(), theLessonForTheQuestions.getArray().get(randomOne).getEnglish());
+		qOne = new NumberQuestion(theLessonForTheQuestions.get(randomOne).getTurkish(), theLessonForTheQuestions.get(randomOne).getEnglish());
 		numUsed.add(randomOne);
 		
 		int randomTwo = (int) (Math.random() * numWord);
@@ -673,7 +670,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomTwo = newNum;
 		}
-		qTwo = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomTwo).getTurkish(), theLessonForTheQuestions.getArray().get(randomTwo).getEnglish());
+		qTwo = new NumberQuestion(theLessonForTheQuestions.get(randomTwo).getTurkish(), theLessonForTheQuestions.get(randomTwo).getEnglish());
 		numUsed.add(randomTwo);
 		
 		int randomThree = (int) (Math.random() * numWord);
@@ -682,7 +679,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomThree = newNum;
 		}
-		qThree = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomThree).getTurkish(), theLessonForTheQuestions.getArray().get(randomThree).getEnglish());
+		qThree = new NumberQuestion(theLessonForTheQuestions.get(randomThree).getTurkish(), theLessonForTheQuestions.get(randomThree).getEnglish());
 		numUsed.add(randomThree);
 		
 		int randomFour = (int) (Math.random() * numWord);
@@ -691,7 +688,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomFour = newNum;
 		}
-		qFour = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomFour).getTurkish(), theLessonForTheQuestions.getArray().get(randomFour).getEnglish());
+		qFour = new NumberQuestion(theLessonForTheQuestions.get(randomFour).getTurkish(), theLessonForTheQuestions.get(randomFour).getEnglish());
 		numUsed.add(randomFour);
 		
 		int randomFive = (int) (Math.random() * numWord);
@@ -700,7 +697,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomFive = newNum;
 		}
-		qFive = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomFive).getTurkish(), theLessonForTheQuestions.getArray().get(randomFive).getEnglish());
+		qFive = new NumberQuestion(theLessonForTheQuestions.get(randomFive).getTurkish(), theLessonForTheQuestions.get(randomFive).getEnglish());
 		numUsed.add(randomFive);
 		
 		int randomSix = (int) (Math.random() * numWord);
@@ -709,7 +706,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomSix = newNum;
 		}
-		qSix = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomSix).getTurkish(), theLessonForTheQuestions.getArray().get(randomSix).getEnglish());
+		qSix = new NumberQuestion(theLessonForTheQuestions.get(randomSix).getTurkish(), theLessonForTheQuestions.get(randomSix).getEnglish());
 		numUsed.add(randomSix);
 		
 		int randomSeven = (int) (Math.random() * numWord);
@@ -718,7 +715,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomSeven = newNum;
 		}
-		qSeven = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomSeven).getTurkish(), theLessonForTheQuestions.getArray().get(randomSeven).getEnglish());
+		qSeven = new NumberQuestion(theLessonForTheQuestions.get(randomSeven).getTurkish(), theLessonForTheQuestions.get(randomSeven).getEnglish());
 		numUsed.add(randomSeven);
 		
 		int randomEight = (int) (Math.random() * numWord);
@@ -727,7 +724,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomEight = newNum;
 		}
-		qEight = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomEight).getTurkish(), theLessonForTheQuestions.getArray().get(randomEight).getEnglish());
+		qEight = new NumberQuestion(theLessonForTheQuestions.get(randomEight).getTurkish(), theLessonForTheQuestions.get(randomEight).getEnglish());
 		numUsed.add(randomEight);
 		
 		int randomNine = (int) (Math.random() * numWord);
@@ -736,7 +733,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomNine = newNum;
 		}
-		qNine = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomNine).getTurkish(), theLessonForTheQuestions.getArray().get(randomNine).getEnglish());
+		qNine = new NumberQuestion(theLessonForTheQuestions.get(randomNine).getTurkish(), theLessonForTheQuestions.get(randomNine).getEnglish());
 		numUsed.add(randomNine);
 		
 		int randomTen = (int) (Math.random() * numWord);
@@ -745,7 +742,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			randomTen = newNum;
 		}
-		qTen = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomTen).getTurkish(), theLessonForTheQuestions.getArray().get(randomTen).getEnglish());
+		qTen = new NumberQuestion(theLessonForTheQuestions.get(randomTen).getTurkish(), theLessonForTheQuestions.get(randomTen).getEnglish());
 		numUsed.add(randomTen);
 	}
 	
@@ -767,7 +764,6 @@ public class QuestionsDialog extends JDialog {
 					needNew = false;
 				}
 			}
-			
 			return newValue;
 		}
 		else

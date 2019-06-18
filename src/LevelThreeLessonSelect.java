@@ -1,6 +1,3 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,9 +15,7 @@ public class LevelThreeLessonSelect extends JFrame {
 	private JPanel contentPane;
 	private LessonText lessonText;
 	private Account userAttemptingThisLesson;
-	
 	private QuestionsDialog questionsDialog;
-	
 
 	/**
 	 * Create the frame.
@@ -214,38 +209,28 @@ public class LevelThreeLessonSelect extends JFrame {
 		if (lesson == 1)
 		{
 			questionsDialog = new QuestionsDialog("Verbs Two", 3, 1, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 2)
 		{
 			questionsDialog = new QuestionsDialog("Questions", 3, 2, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 3)
 		{
 			questionsDialog = new QuestionsDialog("Animals Two", 3, 3, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 4)
 		{
 			questionsDialog = new QuestionsDialog("Food Two", 3, 4, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 5)
 		{
 			questionsDialog = new QuestionsDialog("Verbs Three", 3, 5, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 6)
 		{
 			questionsDialog = new QuestionsDialog("Clothes", 3, 6, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
+		questionsDialog.setLocationRelativeTo(this);
+		questionsDialog.setVisible(true);
 	}
 }

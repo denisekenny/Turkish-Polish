@@ -10,8 +10,7 @@ import java.util.ArrayList;
 
 public class Lessons
 {
-	
-	public static Lesson getLevelFromTextFile(String textFileNameWithoutDefault, String username, int level, int lesson)
+	public static ArrayList<Word> getLevelFromTextFile(String textFileNameWithoutDefault, String username, int level, int lesson)
 	{
 		String userSpecificTextFileName = textFileNameWithoutDefault + "_" + username + ".txt";
 		try
@@ -25,7 +24,7 @@ public class Lessons
 				lessonWordList.add(new Word(wordParameters[0], wordParameters[1], level, lesson));
 			}
 			preferredFileBufferedReader.close();
-			return new Lesson(lessonWordList);
+			return lessonWordList;
 		}
 		catch(FileNotFoundException fnfe)
 		{
@@ -41,7 +40,7 @@ public class Lessons
 		catch(IOException ioe)
 		{
 			ioe.printStackTrace();
-			System.out.println("FATAL ERROR OCCURRED IN GETLEVELFROMTEXTFILE, AN IOEXCEPTION OCCURRED AND THIS BUG MUST BE ADDRESSED.");
+			System.out.println("IOEXCEPTION in the Lessons class, getLevelFromTextFile method");
 			return null;
 		}
 	}
@@ -84,13 +83,13 @@ public class Lessons
 		}
 	}
 	
-	
 	public static ArrayList<Word> worstWords(String username)
 	{
 		ArrayList<Word> incorrectWords = new ArrayList<Word>();
 		int count10 = 0;
 		
 		String userSpecificTextFileName = "level_one_lesson_one" + "_" + username + ".txt";
+		
 		try
 		{
 			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
@@ -666,8 +665,7 @@ public class Lessons
 		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
 		catch(IOException ioe){System.out.println("Io exception");}
 		
-		return incorrectWords;
-		
+		return incorrectWords;	
 	}
 	
 	public static void updateCorrectAndIncorrect(int level, int lesson, String turkishWord, String username, boolean correct)
@@ -678,6 +676,7 @@ public class Lessons
 		String lessonWord = EnglishNumberToWords.convertLessThanOneThousand(lesson);
 		lessonWord = lessonWord.trim();
 		String fileName = "level_" + levelWord + "_lesson_" + lessonWord + "_" + username + ".txt";
+		
 		try
 		{
 	        BufferedReader file = new BufferedReader(new FileReader("lesson_text_files/" + fileName));
@@ -703,27 +702,19 @@ public class Lessons
 						correctNum++;
 						currentLine = currentLine + lineParts[2] + "-" + Integer.toString(correctNum);
 					}
-					
-					inputBuffer.append(currentLine);
-					inputBuffer.append('\n');
 				}
-				else
-				{
-					inputBuffer.append(currentLine);
-					inputBuffer.append('\n');
-				}
+				inputBuffer.append(currentLine);
+				inputBuffer.append('\n');
 	        }	
 			file.close();
 
 			FileOutputStream fileOut = new FileOutputStream("lesson_text_files/" + fileName);
 			fileOut.write(inputBuffer.toString().getBytes());
 			fileOut.close();
-			
 		}
 	    catch (Exception e)
 		{
 	        System.out.println("Problem reading file.");
 	    }
 	}
-	
 }

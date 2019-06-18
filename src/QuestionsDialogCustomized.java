@@ -13,15 +13,11 @@ import javax.swing.border.LineBorder;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class QuestionsDialogCustomized extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	
-	private Account user;
-	private String username;
 	
 	private JTextField txtAOne;
 	private JTextField txtATwo;
@@ -58,6 +54,7 @@ public class QuestionsDialogCustomized extends JDialog {
 	private Question qEight;
 	private Question qNine;
 	private Question qTen;
+	
 	private JLabel lblCorrectionOne;
 	private JLabel lblCorrectionTwo;
 	private JLabel lblCorrectionThree;
@@ -71,14 +68,14 @@ public class QuestionsDialogCustomized extends JDialog {
 	
 	private ArrayList<Word> tenBadWords;
 	private int sizeOfArray;
+	private String username;
 
 	/**
 	 * Create the dialog.
 	 */
-	public QuestionsDialogCustomized(Account paramUserAttemptingThisLesson) {
-		user = paramUserAttemptingThisLesson;
+	public QuestionsDialogCustomized(Account paramUserAttemptingThisLesson)
+	{
 		username = paramUserAttemptingThisLesson.getUsername();
-		
 		createQuestions(username);
 		
 		setBounds(100, 100, 400, 650);
@@ -87,7 +84,6 @@ public class QuestionsDialogCustomized extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
-			
 			lblCustomTest = new JLabel("Custom Test: ");
 			lblCustomTest.setFont(new Font("Dialog", Font.PLAIN, 20));
 			lblCustomTest.setBounds(10, 9, 364, 26);
@@ -288,8 +284,10 @@ public class QuestionsDialogCustomized extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				btnDone = new JButton("Done!");
-				btnDone.addMouseListener(new MouseAdapter() {
-					public void mouseClicked(MouseEvent e) {
+				btnDone.addMouseListener(new MouseAdapter()
+				{
+					public void mouseClicked(MouseEvent e)
+					{
 						if (btnDone.isEnabled())
 						{
 							buttonClicked(e);
@@ -345,7 +343,6 @@ public class QuestionsDialogCustomized extends JDialog {
 		{
 			checkQTen();
 		}
-		
 		btnDone.setEnabled(false);
 	}
 	
@@ -362,7 +359,6 @@ public class QuestionsDialogCustomized extends JDialog {
 			lblCorrectionOne.setText("correct");
 			Lessons.updateCorrectAndIncorrect(tenBadWords.get(0).getLevel(), tenBadWords.get(0).getLesson(), lblQOne.getText().substring(3), this.username, true);
 		}
-		
 	}
 	
 	protected void checkQTwo()
@@ -592,11 +588,10 @@ public class QuestionsDialogCustomized extends JDialog {
 			{
 				qTen = new Question(tenBadWords.get(9).getTurkish(), tenBadWords.get(9).getEnglish());
 			}
-		} catch (Exception e) {
-			//there are less than 10 words the user got wrong more often than right so stop here
-			System.out.println("This did not work");
 		}
-		
+		catch (Exception e)
+		{
+			System.out.println("error in the QuestionsDialogCustomized class");
+		}
 	}
-
 }

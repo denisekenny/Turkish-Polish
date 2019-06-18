@@ -46,6 +46,5 @@ public class NumberQuestion extends Question
 		{
 			return super.checkAnswer(inputResponse);
 		}
-		
 	}	
 }

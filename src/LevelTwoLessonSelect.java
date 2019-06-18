@@ -1,6 +1,3 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -213,38 +210,28 @@ public class LevelTwoLessonSelect extends JFrame {
 		if (lesson == 1)
 		{
 			questionsDialog = new QuestionsDialog("Adjectives", 2, 1, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 2)
 		{
 			questionsDialog = new QuestionsDialog("Conjugating Adjectives", 2, 2, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 3)
 		{
 			questionsDialog = new QuestionsDialog("Verbs One", 2, 3, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 4)
 		{
 			questionsDialog = new QuestionsDialog("Days of the Week", 2, 4, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 5)
 		{
 			questionsDialog = new QuestionsDialog("Family", 2, 5, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 6)
 		{
 			questionsDialog = new QuestionsDialog("Family Two", 2, 6, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
+		questionsDialog.setLocationRelativeTo(this);
+		questionsDialog.setVisible(true);
 	}
 }

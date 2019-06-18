@@ -1,6 +1,3 @@
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,14 +15,15 @@ public class LevelFourLessonSelect extends JFrame {
 	private JPanel contentPane;
 	private LessonText lessonText;
 	private Account userAttemptingThisLesson;
-
 	private QuestionsDialog questionsDialog;
 
 	/**
 	 * Create the frame.
 	 */
-	public LevelFourLessonSelect(Account paramUserAttemptingThisLesson) {
+	public LevelFourLessonSelect(Account paramUserAttemptingThisLesson)
+	{
 		userAttemptingThisLesson = paramUserAttemptingThisLesson;
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -40,7 +38,8 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(lblSelectALesson);
 		
 		JButton btnLessonOne = new JButton("Lesson One:");
-		btnLessonOne.addMouseListener(new MouseAdapter() {
+		btnLessonOne.addMouseListener(new MouseAdapter()
+		{
 			public void mouseClicked(MouseEvent e)
 			{
 				lessonButtonClicked("lessons/levelFourLessonOneOccupations.txt");
@@ -52,8 +51,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonOne);
 		
 		JButton btnLessonTwo = new JButton("Lesson Two");
-		btnLessonTwo.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonTwo.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				lessonButtonClicked("lessons/levelFourLessonTwoOccupationsTwo.txt");
 			}
 		});
@@ -62,8 +63,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonTwo);
 		
 		JButton btnLessonThree = new JButton("Lesson Three");
-		btnLessonThree.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonThree.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				lessonButtonClicked("lessons/levelFourLessonThreeNegation.txt");
 			}
 		});
@@ -72,8 +75,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonThree);
 		
 		JButton btnLessonFour = new JButton("Lesson Four");
-		btnLessonFour.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonFour.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				lessonButtonClicked("lessons/levelFourLessonFourAdverbs.txt");
 			}
 		});
@@ -82,9 +87,11 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonFour);
 		
 		JButton btnLessonFive = new JButton("Lesson Five");
-		btnLessonFive.addMouseListener(new MouseAdapter() {
+		btnLessonFive.addMouseListener(new MouseAdapter()
+		{
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mouseClicked(MouseEvent e)
+			{
 				lessonButtonClicked("lessons/levelFourLessonFiveVerbsFour.txt");
 			}
 		});
@@ -93,8 +100,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonFive);
 		
 		JButton btnLessonSix = new JButton("Lesson Six");
-		btnLessonSix.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonSix.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				lessonButtonClicked("lessons/levelFourLessonSixTime.txt");
 			}
 		});
@@ -138,8 +147,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(lblLevel);
 		
 		JButton btnLessonOneTest = new JButton("Test");
-		btnLessonOneTest.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonOneTest.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				testButtonClicked(1);
 			}
 		});
@@ -148,8 +159,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonOneTest);
 		
 		JButton btnLessonTwoTest = new JButton("Test");
-		btnLessonTwoTest.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonTwoTest.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				testButtonClicked(2);
 			}
 		});
@@ -158,8 +171,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonTwoTest);
 		
 		JButton btnLessonThreeTest = new JButton("Test");
-		btnLessonThreeTest.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonThreeTest.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				testButtonClicked(3);
 			}
 		});
@@ -168,8 +183,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonThreeTest);
 		
 		JButton btnLessonFourTest = new JButton("Test");
-		btnLessonFourTest.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonFourTest.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				testButtonClicked(4);
 			}
 		});
@@ -178,8 +195,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonFourTest);
 		
 		JButton btnLessonFiveTest = new JButton("Test");
-		btnLessonFiveTest.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonFiveTest.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				testButtonClicked(5);
 			}
 		});
@@ -188,8 +207,10 @@ public class LevelFourLessonSelect extends JFrame {
 		contentPane.add(btnLessonFiveTest);
 		
 		JButton btnLessonSixTest = new JButton("Test");
-		btnLessonSixTest.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLessonSixTest.addMouseListener(new MouseAdapter()
+		{
+			public void mouseClicked(MouseEvent e)
+			{
 				testButtonClicked(6);
 			}
 		});
@@ -211,38 +232,28 @@ public class LevelFourLessonSelect extends JFrame {
 		if (lesson == 1)
 		{
 			questionsDialog = new QuestionsDialog("Occupations", 4, 1, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 2)
 		{
 			questionsDialog = new QuestionsDialog("Occupations Two", 4, 2, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 3)
 		{
 			questionsDialog = new QuestionsDialog("Negation", 4, 3, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 4)
 		{
 			questionsDialog = new QuestionsDialog("Adverbs", 4, 4, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 5)
 		{
 			questionsDialog = new QuestionsDialog("Verbs Four", 4, 5, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
 		else if (lesson == 6)
 		{
 			questionsDialog = new QuestionsDialog("Time", 4, 6, userAttemptingThisLesson);
-			questionsDialog.setLocationRelativeTo(this);
-			questionsDialog.setVisible(true);
 		}
+		questionsDialog.setLocationRelativeTo(this);
+		questionsDialog.setVisible(true);
 	}
 }
