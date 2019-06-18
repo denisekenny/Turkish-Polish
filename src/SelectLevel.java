@@ -39,12 +39,16 @@ public class SelectLevel extends JFrame {
 	private LevelFourLessonSelect levelFourSelect;
 	
 	private QuestionsDialogCustomized customTest;
+	
+	private Account user;
 
 	/**
 	 * Create the frame.
 	 */
 	public SelectLevel(Account userAttemptingThisLesson) 
 	{
+		user = userAttemptingThisLesson;
+		
 		levelOneSelect = new LevelOneLessonSelect(userAttemptingThisLesson);
 		levelTwoSelect = new LevelTwoLessonSelect(userAttemptingThisLesson);
 		levelThreeSelect = new LevelThreeLessonSelect(userAttemptingThisLesson);
@@ -256,7 +260,7 @@ public class SelectLevel extends JFrame {
 			return;
 		}
 		
-		customTest = new QuestionsDialogCustomized();
+		customTest = new QuestionsDialogCustomized(user);
 		customTest.setLocationRelativeTo(this);
 		customTest.setVisible(true);
 	}

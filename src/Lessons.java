@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 public class Lessons
 {
 	
-	public static Lesson getLevelFromTextFile(String textFileNameWithoutDefault, String username)
+	public static Lesson getLevelFromTextFile(String textFileNameWithoutDefault, String username, int level, int lesson)
 	{
 		String userSpecificTextFileName = textFileNameWithoutDefault + "_" + username + ".txt";
 		try
@@ -21,7 +22,7 @@ public class Lessons
 			{
 				String currentLine = preferredFileBufferedReader.readLine();
 				String[] wordParameters = currentLine.split("-");
-				lessonWordList.add(new Word(wordParameters[0], wordParameters[1], Integer.parseInt(wordParameters[2]), Integer.parseInt(wordParameters[3])));
+				lessonWordList.add(new Word(wordParameters[0], wordParameters[1], level, lesson));
 			}
 			preferredFileBufferedReader.close();
 			return new Lesson(lessonWordList);
@@ -30,7 +31,7 @@ public class Lessons
 		{
 			if(createUserSpecificFileFromTheDefaultFileAndReturnWhetherYouSucceded(textFileNameWithoutDefault, username))
 			{
-				return getLevelFromTextFile(textFileNameWithoutDefault, username);
+				return getLevelFromTextFile(textFileNameWithoutDefault, username, level, lesson);
 			}
 			else
 			{
@@ -84,375 +85,637 @@ public class Lessons
 	}
 	
 	
-	public static ArrayList<Word> worstWords()
+	public static ArrayList<Word> worstWords(String username)
 	{
-		return null;
-		/*
-		ArrayList<Word> incorrect = new ArrayList<Word>();
+		ArrayList<Word> incorrectWords = new ArrayList<Word>();
 		int count10 = 0;
 		
-		ArrayList<Word> one = getLevelOneLessonOne().getArray();
-		for (int i = 0; i < one.size(); i++)
+		String userSpecificTextFileName = "level_one_lesson_one" + "_" + username + ".txt";
+		try
 		{
-			if (count10 >= 10)
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
 			{
-				return incorrect;
-			}
-			if ((one.get(i).getIncorrect()) > (one.get(i).getCorrect()))
-			{
-				incorrect.add(one.get(i));
-				count10++;
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 1, 1));
+					count10++;
+				}
 				
 			}
-		}
-		
-		ArrayList<Word> two = getLevelOneLessonTwo().getArray();
-		for (int i = 0; i < two.size(); i++)
-		{
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((two.get(i).getIncorrect()) > (two.get(i).getCorrect()))
-			{
-				incorrect.add(two.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> three = getLevelOneLessonThree().getArray();
-		for (int i = 0; i < three.size(); i++)
+		userSpecificTextFileName = "level_one_lesson_two" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 1, 2));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((three.get(i).getIncorrect()) > (three.get(i).getCorrect()))
-			{
-				incorrect.add(three.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> four = getLevelOneLessonFour().getArray();
-		for (int i = 0; i < four.size(); i++)
+		userSpecificTextFileName = "level_one_lesson_three" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 1, 3));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((four.get(i).getIncorrect()) > (four.get(i).getCorrect()))
-			{
-				incorrect.add(four.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> five = getLevelOneLessonFive().getArray();
-		for (int i = 0; i < five.size(); i++)
+		userSpecificTextFileName = "level_one_lesson_four" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 1, 4));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((five.get(i).getIncorrect()) > (five.get(i).getCorrect()))
-			{
-				incorrect.add(five.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> six = getLevelOneLessonSix().getArray();
-		for (int i = 0; i < six.size(); i++)
+		userSpecificTextFileName = "level_one_lesson_five" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 1, 5));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((six.get(i).getIncorrect()) > (six.get(i).getCorrect()))
-			{
-				incorrect.add(six.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> seven = getLevelTwoLessonOne().getArray();
-		for (int i = 0; i < seven.size(); i++)
+		userSpecificTextFileName = "level_one_lesson_six" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 1, 6));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((seven.get(i).getIncorrect()) > (seven.get(i).getCorrect()))
-			{
-				incorrect.add(seven.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> eight = getLevelTwoLessonTwo().getArray();
-		for (int i = 0; i < eight.size(); i++)
+		userSpecificTextFileName = "level_two_lesson_one" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 2, 1));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((eight.get(i).getIncorrect()) > (eight.get(i).getCorrect()))
-			{
-				incorrect.add(eight.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> nine = getLevelTwoLessonThree().getArray();
-		for (int i = 0; i < nine.size(); i++)
+		userSpecificTextFileName = "level_two_lesson_two" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 2, 2));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((nine.get(i).getIncorrect()) > (nine.get(i).getCorrect()))
-			{
-				incorrect.add(nine.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> ten = getLevelTwoLessonFour().getArray();
-		for (int i = 0; i < ten.size(); i++)
+		userSpecificTextFileName = "level_two_lesson_three" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 2, 3));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((ten.get(i).getIncorrect()) > (ten.get(i).getCorrect()))
-			{
-				incorrect.add(ten.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> eleven = getLevelTwoLessonFive().getArray();
-		for (int i = 0; i < eleven.size(); i++)
+		userSpecificTextFileName = "level_two_lesson_four" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 2, 4));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((eleven.get(i).getIncorrect()) > (eleven.get(i).getCorrect()))
-			{
-				incorrect.add(eleven.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> twelve = getLevelTwoLessonSix().getArray();
-		for (int i = 0; i < twelve.size(); i++)
+		userSpecificTextFileName = "level_two_lesson_five" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 2, 5));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((twelve.get(i).getIncorrect()) > (twelve.get(i).getCorrect()))
-			{
-				incorrect.add(twelve.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> thirteen = getLevelThreeLessonOne().getArray();
-		for (int i = 0; i < thirteen.size(); i++)
+		userSpecificTextFileName = "level_two_lesson_six" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 2, 6));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((thirteen.get(i).getIncorrect()) > (thirteen.get(i).getCorrect()))
-			{
-				incorrect.add(thirteen.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> fourteen = getLevelThreeLessonTwo().getArray();
-		for (int i = 0; i < fourteen.size(); i++)
+		userSpecificTextFileName = "level_three_lesson_one" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 3, 1));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((fourteen.get(i).getIncorrect()) > (fourteen.get(i).getCorrect()))
-			{
-				incorrect.add(fourteen.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> fifteen = getLevelThreeLessonThree().getArray();
-		for (int i = 0; i < fifteen.size(); i++)
+		userSpecificTextFileName = "level_three_lesson_two" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 3, 2));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((fifteen.get(i).getIncorrect()) > (fifteen.get(i).getCorrect()))
-			{
-				incorrect.add(fifteen.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> sixteen = getLevelThreeLessonFour().getArray();
-		for (int i = 0; i < sixteen.size(); i++)
+		userSpecificTextFileName = "level_three_lesson_three" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 3, 3));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((sixteen.get(i).getIncorrect()) > (sixteen.get(i).getCorrect()))
-			{
-				incorrect.add(sixteen.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> seventeen = getLevelThreeLessonFive().getArray();
-		for (int i = 0; i < seventeen.size(); i++)
+		userSpecificTextFileName = "level_three_lesson_four" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 3, 4));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((seventeen.get(i).getIncorrect()) > (seventeen.get(i).getCorrect()))
-			{
-				incorrect.add(seventeen.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> eighteen = getLevelThreeLessonSix().getArray();
-		for (int i = 0; i < eighteen.size(); i++)
+		userSpecificTextFileName = "level_three_lesson_five" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 3, 5));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((eighteen.get(i).getIncorrect()) > (eighteen.get(i).getCorrect()))
-			{
-				incorrect.add(eighteen.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> nineteen = getLevelFourLessonOne().getArray();
-		for (int i = 0; i < nineteen.size(); i++)
+		userSpecificTextFileName = "level_three_lesson_six" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 3, 6));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((nineteen.get(i).getIncorrect()) > (nineteen.get(i).getCorrect()))
-			{
-				incorrect.add(nineteen.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> twenty = getLevelFourLessonTwo().getArray();
-		for (int i = 0; i < twenty.size(); i++)
+		userSpecificTextFileName = "level_four_lesson_one" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 4, 1));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((twenty.get(i).getIncorrect()) > (twenty.get(i).getCorrect()))
-			{
-				incorrect.add(twenty.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> twentyOne = getLevelFourLessonThree().getArray();
-		for (int i = 0; i < twentyOne.size(); i++)
+		userSpecificTextFileName = "level_four_lesson_two" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 4, 2));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((twentyOne.get(i).getIncorrect()) > (twentyOne.get(i).getCorrect()))
-			{
-				incorrect.add(twentyOne.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> twentyTwo = getLevelFourLessonFour().getArray();
-		for (int i = 0; i < twentyTwo.size(); i++)
+		userSpecificTextFileName = "level_four_lesson_three" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 4, 3));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((twentyTwo.get(i).getIncorrect()) > (twentyTwo.get(i).getCorrect()))
-			{
-				incorrect.add(twentyTwo.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> twentyThree = getLevelFourLessonFive().getArray();
-		for (int i = 0; i < twentyThree.size(); i++)
+		userSpecificTextFileName = "level_four_lesson_four" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 4, 4));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((twentyThree.get(i).getIncorrect()) > (twentyThree.get(i).getCorrect()))
-			{
-				incorrect.add(twentyThree.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		ArrayList<Word> twentyFour = getLevelFourLessonSix().getArray();
-		for (int i = 0; i < twentyFour.size(); i++)
+		userSpecificTextFileName = "level_four_lesson_five" + "_" + username + ".txt";
+		try
 		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 4, 5));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
 			if (count10 >= 10)
 			{
-				return incorrect;
-			}
-			if ((twentyFour.get(i).getIncorrect()) > (twentyFour.get(i).getCorrect()))
-			{
-				incorrect.add(twentyFour.get(i));
-				count10++;
-				
+				return incorrectWords;
 			}
 		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
 		
-		return incorrect;
-		*/
+		userSpecificTextFileName = "level_four_lesson_six" + "_" + username + ".txt";
+		try
+		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("lesson_text_files/" + userSpecificTextFileName)));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				if (Integer.parseInt(wordParameters[2]) > Integer.parseInt(wordParameters[3]))
+				{
+					incorrectWords.add(new Word(wordParameters[0], wordParameters[1], 4, 6));
+					count10++;
+				}
+				
+			}
+			preferredFileBufferedReader.close();
+			if (count10 >= 10)
+			{
+				return incorrectWords;
+			}
+		}
+		catch(FileNotFoundException fnfe){ /*the user hasn't taken the test for this yet*/ }
+		catch(IOException ioe){System.out.println("Io exception");}
+		
+		return incorrectWords;
+		
+	}
+	
+	public static void updateCorrectAndIncorrect(int level, int lesson, String turkishWord, String username, boolean correct)
+	{
+		String levelWord = EnglishNumberToWords.convertLessThanOneThousand(level);
+		String lessonWord = EnglishNumberToWords.convertLessThanOneThousand(lesson);
+		String fileName = "level_" + levelWord + "_lesson_" + lessonWord + "_" + username + ".txt";
+		try
+		{
+	        BufferedReader file = new BufferedReader(new FileReader("lesson_text_files/" + fileName));
+	        StringBuffer inputBuffer = new StringBuffer();
+	        String currentLine;
+
+	        while ((currentLine = file.readLine()) != null)
+	        {
+	        	String[] lineParts = currentLine.split("-");
+				if(lineParts[1].equals(turkishWord))
+				{
+					currentLine = lineParts[0] + ", " + lineParts[1] + ", ";
+					if (correct == false)
+					{
+						int incorrectNum = Integer.parseInt(lineParts[2]);
+						incorrectNum++;
+						currentLine = currentLine + Integer.toString(incorrectNum) + ", " + lineParts[3];
+					}
+					else
+					{
+						int correctNum = Integer.parseInt(lineParts[3]);
+						correctNum++;
+						currentLine = currentLine + lineParts[2] + ", " + Integer.toString(correctNum);
+					}
+					
+					inputBuffer.append(currentLine);
+					inputBuffer.append('\n');
+					
+					file.close();
+
+			        FileOutputStream fileOut = new FileOutputStream("lesson_text_files/" + fileName);
+			        fileOut.write(inputBuffer.toString().getBytes());
+			        fileOut.close();
+			        break;
+				}
+	        }
+		}
+	    catch (Exception e)
+		{
+	        System.out.println("Problem reading file.");
+	    }
 	}
 	
 }

@@ -2,45 +2,15 @@ public class Word
 {
 	private String english;
 	private String turkish;
-	private boolean given;
-	private int correctCount;
-	private int incorrectCount;
+	private int level;
+	private int lesson;
 	
-	public Word(String english, String turkish, int correctCount, int incorrectCount)
+	public Word(String english, String turkish, int level, int lesson)
 	{
 		this.english = english;
 		this.turkish = turkish;
-		this.given = false;
-		this.correctCount = correctCount;
-		this.incorrectCount = incorrectCount;
-	}
-	
-	public int getCorrect() {
-		return correctCount;
-	}
-
-
-	public void setCorrect(int correctCount) {
-		this.correctCount = correctCount;
-	}
-
-
-	public int getIncorrect() {
-		return incorrectCount;
-	}
-
-
-	public void setIncorrect(int incorrectCount) {
-		this.incorrectCount = incorrectCount;
-	}
-	
-	public boolean isGiven() {
-		return given;
-	}
-
-
-	public void setGiven(boolean given) {
-		this.given = given;
+		this.level = level;
+		this.lesson = lesson;
 	}
 
 
@@ -61,5 +31,24 @@ public class Word
 
 	public void setTurkish(String turkish) {
 		this.turkish = turkish;
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+
+	public int getLesson() {
+		return lesson;
+	}
+
+
+	public void setLesson(int lesson) {
+		this.lesson = lesson;
 	}
 }

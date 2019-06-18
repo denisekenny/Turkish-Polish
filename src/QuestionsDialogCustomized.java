@@ -20,6 +20,9 @@ public class QuestionsDialogCustomized extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	
+	private Account user;
+	private String username;
+	
 	private JTextField txtAOne;
 	private JTextField txtATwo;
 	private JTextField txtAThree;
@@ -67,8 +70,11 @@ public class QuestionsDialogCustomized extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public QuestionsDialogCustomized() {
-		createQuestions();
+	public QuestionsDialogCustomized(Account paramUserAttemptingThisLesson) {
+		user = paramUserAttemptingThisLesson;
+		username = paramUserAttemptingThisLesson.getUsername();
+		
+		createQuestions(username);
 		
 		setBounds(100, 100, 400, 650);
 		getContentPane().setLayout(new BorderLayout());
@@ -364,20 +370,100 @@ public class QuestionsDialogCustomized extends JDialog {
 		}
 	}
 	
-	private void createQuestions()
+	private void createQuestions(String username)
 	{
-		ArrayList<Word> tenBadWords = Lessons.worstWords();
-
-		qOne = new Question(tenBadWords.get(0).getTurkish(), tenBadWords.get(0).getEnglish());
-		qTwo = new Question(tenBadWords.get(1).getTurkish(), tenBadWords.get(1).getEnglish());
-		qThree = new Question(tenBadWords.get(2).getTurkish(), tenBadWords.get(2).getEnglish());
-		qFour = new Question(tenBadWords.get(3).getTurkish(), tenBadWords.get(3).getEnglish());
-		qFive = new Question(tenBadWords.get(4).getTurkish(), tenBadWords.get(4).getEnglish());
-		qSix = new Question(tenBadWords.get(5).getTurkish(), tenBadWords.get(5).getEnglish());
-		qSeven = new Question(tenBadWords.get(6).getTurkish(), tenBadWords.get(6).getEnglish());
-		qEight = new Question(tenBadWords.get(7).getTurkish(), tenBadWords.get(7).getEnglish());
-		qNine = new Question(tenBadWords.get(8).getTurkish(), tenBadWords.get(8).getEnglish());
-		qTen = new Question(tenBadWords.get(9).getTurkish(), tenBadWords.get(9).getEnglish());
+		ArrayList<Word> tenBadWords = Lessons.worstWords(username);
+		
+		try {
+			if ((tenBadWords.get(0).getLevel() == 1) && (tenBadWords.get(0).getLesson() == 3))
+			{
+				qOne = new NumberQuestion(tenBadWords.get(0).getTurkish(), tenBadWords.get(0).getEnglish());
+			}
+			else
+			{
+				qOne = new Question(tenBadWords.get(0).getTurkish(), tenBadWords.get(0).getEnglish());
+			}
+			if ((tenBadWords.get(1).getLevel() == 1) && (tenBadWords.get(1).getLesson() == 3))
+			{
+				qTwo = new NumberQuestion(tenBadWords.get(1).getTurkish(), tenBadWords.get(1).getEnglish());
+			}
+			else
+			{
+				qTwo = new Question(tenBadWords.get(1).getTurkish(), tenBadWords.get(1).getEnglish());
+			}
+			if ((tenBadWords.get(2).getLevel() == 1) && (tenBadWords.get(2).getLesson() == 3))
+			{
+				qThree = new NumberQuestion(tenBadWords.get(2).getTurkish(), tenBadWords.get(2).getEnglish());
+			}
+			else
+			{
+				qThree = new Question(tenBadWords.get(2).getTurkish(), tenBadWords.get(2).getEnglish());
+			}
+			if ((tenBadWords.get(3).getLevel() == 1) && (tenBadWords.get(3).getLesson() == 3))
+			{
+				qFour = new NumberQuestion(tenBadWords.get(3).getTurkish(), tenBadWords.get(3).getEnglish());
+			}
+			else
+			{
+				qFour = new Question(tenBadWords.get(3).getTurkish(), tenBadWords.get(3).getEnglish());
+			}
+			
+			if ((tenBadWords.get(4).getLevel() == 1) && (tenBadWords.get(4).getLesson() == 3))
+			{
+				qFive = new NumberQuestion(tenBadWords.get(4).getTurkish(), tenBadWords.get(4).getEnglish());
+			}
+			else
+			{
+				qFive = new Question(tenBadWords.get(4).getTurkish(), tenBadWords.get(4).getEnglish());
+			}
+			
+			if ((tenBadWords.get(5).getLevel() == 1) && (tenBadWords.get(5).getLesson() == 3))
+			{
+				qSix = new NumberQuestion(tenBadWords.get(5).getTurkish(), tenBadWords.get(5).getEnglish());
+			}
+			else
+			{
+				qSix = new Question(tenBadWords.get(5).getTurkish(), tenBadWords.get(5).getEnglish());
+			}
+			
+			if ((tenBadWords.get(6).getLevel() == 1) && (tenBadWords.get(6).getLesson() == 3))
+			{
+				qSeven = new NumberQuestion(tenBadWords.get(6).getTurkish(), tenBadWords.get(6).getEnglish());
+			}
+			else
+			{
+				qSeven = new Question(tenBadWords.get(6).getTurkish(), tenBadWords.get(6).getEnglish());
+			}
+			
+			if ((tenBadWords.get(7).getLevel() == 1) && (tenBadWords.get(7).getLesson() == 3))
+			{
+				qEight = new NumberQuestion(tenBadWords.get(7).getTurkish(), tenBadWords.get(7).getEnglish());
+			}
+			else
+			{
+				qEight = new Question(tenBadWords.get(7).getTurkish(), tenBadWords.get(7).getEnglish());
+			}
+			
+			if ((tenBadWords.get(8).getLevel() == 1) && (tenBadWords.get(8).getLesson() == 3))
+			{
+				qNine = new NumberQuestion(tenBadWords.get(8).getTurkish(), tenBadWords.get(8).getEnglish());
+			}
+			else
+			{
+				qNine = new Question(tenBadWords.get(8).getTurkish(), tenBadWords.get(8).getEnglish());
+			}
+			
+			if ((tenBadWords.get(9).getLevel() == 1) && (tenBadWords.get(9).getLesson() == 3))
+			{
+				qTen = new NumberQuestion(tenBadWords.get(9).getTurkish(), tenBadWords.get(9).getEnglish());
+			}
+			else
+			{
+				qTen = new Question(tenBadWords.get(9).getTurkish(), tenBadWords.get(9).getEnglish());
+			}
+		} catch (IndexOutOfBoundsException e) {
+			//there are less than 10 words the user got wrong more often than right so stop here
+		}
 		
 	}
 

@@ -300,10 +300,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionOne.setText(qOne.getAnswer());
 			lblCorrectionOne.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQOne.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionOne.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQOne.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 		
 	}
@@ -314,10 +316,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionTwo.setText(qTwo.getAnswer());
 			lblCorrectionTwo.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTwo.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionTwo.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTwo.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -327,10 +331,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionThree.setText(qThree.getAnswer());
 			lblCorrectionThree.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQThree.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionThree.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQThree.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -340,10 +346,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionFour.setText(qFour.getAnswer());
 			lblCorrectionFour.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFour.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionFour.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFour.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -353,10 +361,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionFive.setText(qFive.getAnswer());
 			lblCorrectionFive.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFive.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionFive.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFive.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -366,10 +376,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionSix.setText(qSix.getAnswer());
 			lblCorrectionSix.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSix.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionSix.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSix.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -379,10 +391,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionSeven.setText(qSeven.getAnswer());
 			lblCorrectionSeven.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSeven.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionSeven.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSeven.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -392,10 +406,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionEight.setText(qEight.getAnswer());
 			lblCorrectionEight.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQEight.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionEight.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQEight.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -405,10 +421,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionNine.setText(qNine.getAnswer());
 			lblCorrectionNine.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQNine.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionNine.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQNine.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -418,10 +436,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionTen.setText(qTen.getAnswer());
 			lblCorrectionTen.setBorder(new LineBorder(Color.RED, 1));
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTen.getText(), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionTen.setText("correct");
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTen.getText(), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -433,108 +453,108 @@ public class QuestionsDialog extends JDialog {
 		{
 			if (lesson == 1)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_one", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_one", userAttemptingThisLesson.getUsername(), 1, 1);
 			}
 			else if (lesson == 2)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_two", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_two", userAttemptingThisLesson.getUsername(), 1, 2);
 			}
 			else if (lesson == 3)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_three", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_three", userAttemptingThisLesson.getUsername(), 1, 3);
 			}
 			else if (lesson == 4)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_four", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_four", userAttemptingThisLesson.getUsername(), 1, 4);
 			}
 			else if (lesson == 5)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_five", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_five", userAttemptingThisLesson.getUsername(), 1, 5);
 			}
 			else if (lesson == 6)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_six", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_one_lesson_six", userAttemptingThisLesson.getUsername(), 1, 6);
 			}
 		}
 		else if (level == 2)
 		{
 			if (lesson == 1)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_one", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_one", userAttemptingThisLesson.getUsername(), 2, 1);
 			}
 			else if (lesson == 2)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_two", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_two", userAttemptingThisLesson.getUsername(), 2, 2);
 			}
 			else if (lesson == 3)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_three", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_three", userAttemptingThisLesson.getUsername(), 2, 3);
 			}
 			else if (lesson == 4)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_four", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_four", userAttemptingThisLesson.getUsername(), 2, 4);
 			}
 			else if (lesson == 5)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_five", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_five", userAttemptingThisLesson.getUsername(), 2, 5);
 			}
 			else if (lesson == 6)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_six", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_two_lesson_six", userAttemptingThisLesson.getUsername(), 2, 6);
 			}
 		}
 		else if (level == 3)
 		{
 			if (lesson == 1)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_one", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_one", userAttemptingThisLesson.getUsername(), 3, 1);
 			}
 			else if (lesson == 2)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_two", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_two", userAttemptingThisLesson.getUsername(), 3, 2);
 			}
 			else if (lesson == 3)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_three", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_three", userAttemptingThisLesson.getUsername(), 3, 3);
 			}
 			else if (lesson == 4)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_four", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_four", userAttemptingThisLesson.getUsername(), 3, 4);
 			}
 			else if (lesson == 5)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_five", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_five", userAttemptingThisLesson.getUsername(), 3, 5);
 			}
 			else if (lesson == 6)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_six", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_three_lesson_six", userAttemptingThisLesson.getUsername(), 3, 6);
 			}
 		}
 		else if (level == 4)
 		{
 			if (lesson == 1)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_one", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_one", userAttemptingThisLesson.getUsername(), 4, 1);
 			}
 			else if (lesson == 2)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_two", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_two", userAttemptingThisLesson.getUsername(), 4, 2);
 			}
 			else if (lesson == 3)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_three", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_three", userAttemptingThisLesson.getUsername(), 4, 3);
 			}
 			else if (lesson == 4)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_four", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_four", userAttemptingThisLesson.getUsername(), 4, 4);
 			}
 			else if (lesson == 5)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_five", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_five", userAttemptingThisLesson.getUsername(), 4, 5);
 			}
 			else if (lesson == 6)
 			{
-				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_six", userAttemptingThisLesson.getUsername());
+				lessonArray = Lessons.getLevelFromTextFile("level_four_lesson_six", userAttemptingThisLesson.getUsername(), 4, 6);
 			}
 		}
 		
