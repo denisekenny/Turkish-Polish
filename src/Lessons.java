@@ -672,8 +672,11 @@ public class Lessons
 	
 	public static void updateCorrectAndIncorrect(int level, int lesson, String turkishWord, String username, boolean correct)
 	{
+		turkishWord = turkishWord.trim();
 		String levelWord = EnglishNumberToWords.convertLessThanOneThousand(level);
+		levelWord = levelWord.trim();
 		String lessonWord = EnglishNumberToWords.convertLessThanOneThousand(lesson);
+		lessonWord = lessonWord.trim();
 		String fileName = "level_" + levelWord + "_lesson_" + lessonWord + "_" + username + ".txt";
 		try
 		{
@@ -681,36 +684,41 @@ public class Lessons
 	        StringBuffer inputBuffer = new StringBuffer();
 	        String currentLine;
 
-	        while ((currentLine = file.readLine()) != null)
+	        while (file.ready())
 	        {
+	        	currentLine = file.readLine();
 	        	String[] lineParts = currentLine.split("-");
 				if(lineParts[1].equals(turkishWord))
 				{
-					currentLine = lineParts[0] + ", " + lineParts[1] + ", ";
+					currentLine = lineParts[0] + "-" + lineParts[1] + "-";
 					if (correct == false)
 					{
 						int incorrectNum = Integer.parseInt(lineParts[2]);
 						incorrectNum++;
-						currentLine = currentLine + Integer.toString(incorrectNum) + ", " + lineParts[3];
+						currentLine = currentLine + Integer.toString(incorrectNum) + "-" + lineParts[3];
 					}
 					else
 					{
 						int correctNum = Integer.parseInt(lineParts[3]);
 						correctNum++;
-						currentLine = currentLine + lineParts[2] + ", " + Integer.toString(correctNum);
+						currentLine = currentLine + lineParts[2] + "-" + Integer.toString(correctNum);
 					}
 					
 					inputBuffer.append(currentLine);
 					inputBuffer.append('\n');
-					
-					file.close();
-
-			        FileOutputStream fileOut = new FileOutputStream("lesson_text_files/" + fileName);
-			        fileOut.write(inputBuffer.toString().getBytes());
-			        fileOut.close();
-			        break;
 				}
-	        }
+				else
+				{
+					inputBuffer.append(currentLine);
+					inputBuffer.append('\n');
+				}
+	        }	
+			file.close();
+
+			FileOutputStream fileOut = new FileOutputStream("lesson_text_files/" + fileName);
+			fileOut.write(inputBuffer.toString().getBytes());
+			fileOut.close();
+			
 		}
 	    catch (Exception e)
 		{

@@ -463,6 +463,7 @@ public class QuestionsDialogCustomized extends JDialog {
 			}
 		} catch (IndexOutOfBoundsException e) {
 			//there are less than 10 words the user got wrong more often than right so stop here
+			System.out.println("This did not work");
 		}
 		
 	}

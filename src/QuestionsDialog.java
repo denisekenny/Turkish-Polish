@@ -300,12 +300,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionOne.setText(qOne.getAnswer());
 			lblCorrectionOne.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQOne.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQOne.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionOne.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQOne.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQOne.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 		
 	}
@@ -316,12 +316,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionTwo.setText(qTwo.getAnswer());
 			lblCorrectionTwo.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTwo.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTwo.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionTwo.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTwo.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTwo.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -331,12 +331,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionThree.setText(qThree.getAnswer());
 			lblCorrectionThree.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQThree.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQThree.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionThree.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQThree.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQThree.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -346,12 +346,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionFour.setText(qFour.getAnswer());
 			lblCorrectionFour.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFour.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFour.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionFour.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFour.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFour.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -361,12 +361,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionFive.setText(qFive.getAnswer());
 			lblCorrectionFive.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFive.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFive.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionFive.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFive.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQFive.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -376,12 +376,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionSix.setText(qSix.getAnswer());
 			lblCorrectionSix.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSix.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSix.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionSix.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSix.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSix.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -391,12 +391,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionSeven.setText(qSeven.getAnswer());
 			lblCorrectionSeven.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSeven.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSeven.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionSeven.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSeven.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQSeven.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -406,12 +406,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionEight.setText(qEight.getAnswer());
 			lblCorrectionEight.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQEight.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQEight.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionEight.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQEight.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQEight.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -421,12 +421,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionNine.setText(qNine.getAnswer());
 			lblCorrectionNine.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQNine.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQNine.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionNine.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQNine.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQNine.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	
@@ -436,12 +436,12 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionTen.setText(qTen.getAnswer());
 			lblCorrectionTen.setBorder(new LineBorder(Color.RED, 1));
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTen.getText(), userAttemptingThisLesson.getUsername(), false);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTen.getText().substring(3), userAttemptingThisLesson.getUsername(), false);
 		}
 		else
 		{
 			lblCorrectionTen.setText("correct");
-			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTen.getText(), userAttemptingThisLesson.getUsername(), true);
+			Lessons.updateCorrectAndIncorrect(level, lesson, lblQTen.getText().substring(3), userAttemptingThisLesson.getUsername(), true);
 		}
 	}
 	

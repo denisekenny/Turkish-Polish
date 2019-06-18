@@ -79,8 +79,6 @@ public class LockScreen extends JFrame {
 	private JButton btnReset = new JButton("Reset");
 	
 	private ResetAllDialog resetAllDialog;
-	
-	
 
 	/**
 	 * Launch the application.
