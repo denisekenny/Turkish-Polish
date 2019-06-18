@@ -31,6 +31,8 @@ public class QuestionsDialog extends JDialog {
 	private JTextField txtANine;
 	private JTextField txtATen;
 	
+	private JButton btnDone;
+	
 	private JLabel lblLessonReview;
 	private JLabel lblQOne;
 	private JLabel lblQTwo;
@@ -266,10 +268,13 @@ public class QuestionsDialog extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton btnDone = new JButton("Done!");
+				btnDone = new JButton("Done!");
 				btnDone.addMouseListener(new MouseAdapter() {
 					public void mouseClicked(MouseEvent e) {
-						buttonClicked(e);
+						if (btnDone.isEnabled())
+						{
+							buttonClicked(e);
+						}
 					}
 				});
 				btnDone.setActionCommand("OK");
@@ -291,6 +296,7 @@ public class QuestionsDialog extends JDialog {
 		checkQEight();
 		checkQNine();
 		checkQTen();
+		btnDone.setEnabled(false);
 		
 	}
 	
