@@ -6,6 +6,7 @@ public class TestingFun
 {
 	public static void main(String args[])
 	{
-		System.out.println("y");
+		Question q = new NumberQuestion("sifir", "zero");
+		System.out.println(q.checkAnswer("0"));
 	}
 }

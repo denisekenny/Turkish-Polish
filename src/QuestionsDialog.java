@@ -80,7 +80,15 @@ public class QuestionsDialog extends JDialog {
 		this.level = level;
 		this.lesson = lesson;
 		getLesson();
-		createQuestions();
+		if ((level == 1) && (lesson == 3))
+		{
+			createQuestionsLevelOneLessonThreeNumbers();
+		}
+		else
+		{
+			createQuestions();
+		}
+		
 		
 		setBounds(100, 100, 400, 650);
 		getContentPane().setLayout(new BorderLayout());
@@ -297,6 +305,7 @@ public class QuestionsDialog extends JDialog {
 		{
 			lblCorrectionOne.setText("correct");
 		}
+		
 	}
 	
 	protected void checkQTwo()
@@ -620,6 +629,97 @@ public class QuestionsDialog extends JDialog {
 			randomTen = newNum;
 		}
 		qTen = new Question(theLessonForTheQuestions.getArray().get(randomTen).getTurkish(), theLessonForTheQuestions.getArray().get(randomTen).getEnglish());
+		numUsed.add(randomTen);
+	}
+	
+	private void createQuestionsLevelOneLessonThreeNumbers()
+	{
+		ArrayList<Integer> numUsed = new ArrayList<>();
+		int numWord = theLessonForTheQuestions.getArray().size();
+		
+		int randomOne = (int) (Math.random() * numWord); //gives a number between 0 and the last index
+		qOne = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomOne).getTurkish(), theLessonForTheQuestions.getArray().get(randomOne).getEnglish());
+		numUsed.add(randomOne);
+		
+		int randomTwo = (int) (Math.random() * numWord);
+		int newNum = this.checkIfUsed(numUsed, randomTwo, numWord);
+		if (newNum != -1)
+		{
+			randomTwo = newNum;
+		}
+		qTwo = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomTwo).getTurkish(), theLessonForTheQuestions.getArray().get(randomTwo).getEnglish());
+		numUsed.add(randomTwo);
+		
+		int randomThree = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomThree, numWord);
+		if (newNum != -1)
+		{
+			randomThree = newNum;
+		}
+		qThree = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomThree).getTurkish(), theLessonForTheQuestions.getArray().get(randomThree).getEnglish());
+		numUsed.add(randomThree);
+		
+		int randomFour = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomFour, numWord);
+		if (newNum != -1)
+		{
+			randomFour = newNum;
+		}
+		qFour = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomFour).getTurkish(), theLessonForTheQuestions.getArray().get(randomFour).getEnglish());
+		numUsed.add(randomFour);
+		
+		int randomFive = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomFive, numWord);
+		if (newNum != -1)
+		{
+			randomFive = newNum;
+		}
+		qFive = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomFive).getTurkish(), theLessonForTheQuestions.getArray().get(randomFive).getEnglish());
+		numUsed.add(randomFive);
+		
+		int randomSix = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomSix, numWord);
+		if (newNum != -1)
+		{
+			randomSix = newNum;
+		}
+		qSix = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomSix).getTurkish(), theLessonForTheQuestions.getArray().get(randomSix).getEnglish());
+		numUsed.add(randomSix);
+		
+		int randomSeven = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomSeven, numWord);
+		if (newNum != -1)
+		{
+			randomSeven = newNum;
+		}
+		qSeven = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomSeven).getTurkish(), theLessonForTheQuestions.getArray().get(randomSeven).getEnglish());
+		numUsed.add(randomSeven);
+		
+		int randomEight = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomEight, numWord);
+		if (newNum != -1)
+		{
+			randomEight = newNum;
+		}
+		qEight = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomEight).getTurkish(), theLessonForTheQuestions.getArray().get(randomEight).getEnglish());
+		numUsed.add(randomEight);
+		
+		int randomNine = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomNine, numWord);
+		if (newNum != -1)
+		{
+			randomNine = newNum;
+		}
+		qNine = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomNine).getTurkish(), theLessonForTheQuestions.getArray().get(randomNine).getEnglish());
+		numUsed.add(randomNine);
+		
+		int randomTen = (int) (Math.random() * numWord);
+		newNum = this.checkIfUsed(numUsed, randomTen, numWord);
+		if (newNum != -1)
+		{
+			randomTen = newNum;
+		}
+		qTen = new NumberQuestion(theLessonForTheQuestions.getArray().get(randomTen).getTurkish(), theLessonForTheQuestions.getArray().get(randomTen).getEnglish());
 		numUsed.add(randomTen);
 	}
 	

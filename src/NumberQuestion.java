@@ -5,32 +5,47 @@ public class NumberQuestion extends Question
 		super(question, answer);
 	}
 	
-	public boolean checkAnswer(int response)
+	public boolean checkAnswer(String inputResponse)
 	{
-		String strResponse = "";
-		
-		if (response < 0)
+		if(inputResponse.equals("0"))
 		{
-			return false;
-		}
-		else if (response < 1000)
-		{
-			strResponse = EnglishNumberToWords.convertLessThanOneThousand(response);
-		}
-		else
-		{
-			strResponse = EnglishNumberToWords.convert(response);
+			return super.checkAnswer("zero");
 		}
 		
-		if (strResponse.substring(0, 1).equals(" "))
+		try
 		{
-			strResponse = strResponse.substring(1);
+			int response = Integer.parseInt(inputResponse);
+			
+			String strResponse = "";
+			
+			if (response < 0)
+			{
+				return false;
+			}
+			else if (response < 1000)
+			{
+				strResponse = EnglishNumberToWords.convertLessThanOneThousand(response);
+			}
+			else
+			{
+				strResponse = EnglishNumberToWords.convert(response);
+			}
+			
+			if (strResponse.substring(0, 1).equals(" "))
+			{
+				strResponse = strResponse.substring(1);
+			}
+			if (strResponse.substring(strResponse.length() - 1).equals(" "))
+			{
+				strResponse = strResponse.substring(0, strResponse.length() - 1);
+			}
+			
+			return super.checkAnswer(strResponse);
 		}
-		if (strResponse.substring(strResponse.length() - 1).equals(" "))
+		catch (NumberFormatException e)
 		{
-			strResponse = strResponse.substring(0, strResponse.length() - 1);
+			return super.checkAnswer(inputResponse);
 		}
 		
-		return super.checkAnswer(strResponse);
 	}	
 }
