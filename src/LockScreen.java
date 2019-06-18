@@ -343,7 +343,10 @@ public class LockScreen extends JFrame {
 			{
 				String currentLine = preferredFileBufferedReader.readLine();
 				String[] wordParameters = currentLine.split("-");
-				accountsFromTextFile.add(new Account(wordParameters[0], wordParameters[1], wordParameters[2]));
+				if (wordParameters.length >= 3)
+				{
+					accountsFromTextFile.add(new Account(wordParameters[0], wordParameters[1], wordParameters[2]));
+				}
 			}
 			preferredFileBufferedReader.close();
 			accounts.setAccounts(accountsFromTextFile);
@@ -466,6 +469,7 @@ public class LockScreen extends JFrame {
 				{
 					currentLine = username + "-" + newPassword + "-" + answer;
 				}
+				inputBuffer.append('\n');
 				inputBuffer.append(currentLine);
 	        }	
 			file.close();

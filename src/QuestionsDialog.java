@@ -104,7 +104,7 @@ public class QuestionsDialog extends JDialog {
 			
 			lblQOne = new JLabel("1. " + qOne.giveQuestion());
 			lblQOne.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQOne.setBounds(10, 50, 198, 14);
+			lblQOne.setBounds(10, 50, 198, 20);
 			contentPanel.add(lblQOne);
 			
 			txtAOne = new JTextField();
@@ -115,7 +115,7 @@ public class QuestionsDialog extends JDialog {
 			
 			lblQTwo = new JLabel("2. " + qTwo.giveQuestion());
 			lblQTwo.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQTwo.setBounds(10, 100, 198, 14);
+			lblQTwo.setBounds(10, 100, 198, 20);
 			contentPanel.add(lblQTwo);
 			
 			lblQThree = new JLabel("3. " + qThree.giveQuestion());
@@ -125,32 +125,32 @@ public class QuestionsDialog extends JDialog {
 			
 			lblQFour = new JLabel("4. " + qFour.giveQuestion());
 			lblQFour.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQFour.setBounds(10, 200, 198, 14);
+			lblQFour.setBounds(10, 200, 198, 20);
 			contentPanel.add(lblQFour);
 			
 			lblQFive = new JLabel("5. " + qFive.giveQuestion());
 			lblQFive.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQFive.setBounds(10, 250, 198, 14);
+			lblQFive.setBounds(10, 250, 198, 20);
 			contentPanel.add(lblQFive);
 			
 			lblQSix = new JLabel("6. " + qSix.giveQuestion());
 			lblQSix.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQSix.setBounds(10, 300, 198, 14);
+			lblQSix.setBounds(10, 300, 198, 20);
 			contentPanel.add(lblQSix);
 			
 			lblQSeven = new JLabel("7. " + qSeven.giveQuestion());
 			lblQSeven.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQSeven.setBounds(10, 350, 198, 14);
+			lblQSeven.setBounds(10, 350, 198, 20);
 			contentPanel.add(lblQSeven);
 			
 			lblQEight = new JLabel("8. " + qEight.giveQuestion());
 			lblQEight.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQEight.setBounds(10, 400, 198, 14);
+			lblQEight.setBounds(10, 400, 198, 20);
 			contentPanel.add(lblQEight);
 			
 			lblQNine = new JLabel("9. " + qNine.giveQuestion());
 			lblQNine.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQNine.setBounds(10, 450, 198, 14);
+			lblQNine.setBounds(10, 450, 198, 20);
 			contentPanel.add(lblQNine);
 			
 			txtATwo = new JTextField();
@@ -203,7 +203,7 @@ public class QuestionsDialog extends JDialog {
 			
 			lblQTen = new JLabel("10. " + qTen.giveQuestion());
 			lblQTen.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
-			lblQTen.setBounds(10, 500, 198, 14);
+			lblQTen.setBounds(10, 500, 198, 20);
 			contentPanel.add(lblQTen);
 
 			txtATen = new JTextField();
@@ -657,6 +657,7 @@ public class QuestionsDialog extends JDialog {
 	
 	private void createQuestionsLevelOneLessonThreeNumbers()
 	{
+		System.out.println("beginning");
 		ArrayList<Integer> numUsed = new ArrayList<>();
 		int numWord = theLessonForTheQuestions.size();
 		
@@ -744,6 +745,7 @@ public class QuestionsDialog extends JDialog {
 		}
 		qTen = new NumberQuestion(theLessonForTheQuestions.get(randomTen).getTurkish(), theLessonForTheQuestions.get(randomTen).getEnglish());
 		numUsed.add(randomTen);
+		System.out.println("made it to the end");
 	}
 	
 	//returns -1 if the randomNumber is new or an alternate new number if it was used

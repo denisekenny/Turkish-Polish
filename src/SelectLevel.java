@@ -139,7 +139,7 @@ public class SelectLevel extends JFrame {
 		btncongratulations.setBounds(174, 272, 130, 33);
 		contentPane.add(btncongratulations);
 		
-		lblCustomizedLesson = new JLabel("Alternativerly, here is a customized lesson:");
+		lblCustomizedLesson = new JLabel("Alternatively, here is a customized lesson:");
 		lblCustomizedLesson.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 		lblCustomizedLesson.setBounds(98, 333, 325, 21);
 		contentPane.add(lblCustomizedLesson);
