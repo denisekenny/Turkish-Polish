@@ -9,6 +9,11 @@ public class UsernamePassword
 		allAccounts = new ArrayList<Account>();
 	}
 	
+	public void setAccounts(ArrayList<Account> accounts)
+	{
+		allAccounts = accounts;
+	}
+	
 	public void addAccount(Account account)
 	{
 		if (this.usernameExists(account.getUsername()))
@@ -99,6 +104,11 @@ public class UsernamePassword
 		return allAccounts.get(index);
 	}
 	
+	public String getOriginalSecurityQuestionAnswer(String username)
+	{
+		return this.getAccount(username).getAnswer();
+	}
+	
 	//uppercase and lower case matters for username and password
 	public boolean checkPassword(String username, String password)
 	{
@@ -183,7 +193,7 @@ public class UsernamePassword
 	{
 		boolean canIt = false;
 		
-		if (!(answer.equals("")))
+		if ((!(answer.equals(""))) && (!(answer.equals("answer was not given"))))
 		{
 			canIt = true;
 		}

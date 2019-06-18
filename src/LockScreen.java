@@ -34,6 +34,16 @@ import java.awt.event.WindowEvent;
 import java.awt.event.InputMethodListener;
 import java.awt.event.InputMethodEvent;
 import java.beans.PropertyChangeListener;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
 import java.beans.PropertyChangeEvent;
 import javax.swing.event.CaretListener;
 import javax.swing.event.CaretEvent;
@@ -75,7 +85,7 @@ public class LockScreen extends JFrame {
 	private SelectLevel selectingLevel;
 	
 	private WrongSignInInfo incorrectPopUp;
-	private UsernamePassword accounts = new UsernamePassword();
+	private UsernamePassword accounts;
 	private JButton btnReset = new JButton("Reset");
 	
 	private ResetAllDialog resetAllDialog;
@@ -100,6 +110,9 @@ public class LockScreen extends JFrame {
 	 * Create the frame.
 	 */
 	public LockScreen() {
+		
+		accounts = new UsernamePassword();
+		getAccountsFromTextFile();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 825, 500);
@@ -330,6 +343,32 @@ public class LockScreen extends JFrame {
 		btnReset.setFont(new Font("Toppan Bunkyu Gothic", Font.PLAIN, 13));
 	}
 	
+	protected void getAccountsFromTextFile()
+	{
+		ArrayList<Account> accountsFromTextFile = new ArrayList<Account>();
+		try
+		{
+			BufferedReader preferredFileBufferedReader = new BufferedReader(new FileReader(new File("accounts/" + "all_the_accounts.txt")));
+			while(preferredFileBufferedReader.ready())
+			{
+				String currentLine = preferredFileBufferedReader.readLine();
+				String[] wordParameters = currentLine.split("-");
+				accountsFromTextFile.add(new Account(wordParameters[0], wordParameters[1], wordParameters[2]));
+			}
+			preferredFileBufferedReader.close();
+			accounts.setAccounts(accountsFromTextFile);
+		}
+		catch (FileNotFoundException fnfe)
+		{
+			System.out.println("this should not happen");
+		}
+		catch(IOException ioe)
+		{
+			System.out.println("AN IOEXCEPTION OCCURRED");
+		}
+	}
+	
+	
 	protected void resetBtnClick(MouseEvent e)
 	{
 		resetAllDialog = new ResetAllDialog();
@@ -373,12 +412,41 @@ public class LockScreen extends JFrame {
 		{
 			Account accountToAdd = new Account(txtUsernameSignUp.getText(), txtPasswordSignUp.getText(), txtSecurityQuestionAnswer.getText());
 			accounts.addAccount(accountToAdd);
+			
+			updateTextFileSignUp(accountToAdd);
+			
 			selectingLevel = new SelectLevel(accountToAdd);
 			selectingLevel.setLocationRelativeTo(this);
 			selectingLevel.setVisible(true);
 			this.setVisible(false);
 		}
 	}
+	
+	protected void updateTextFileSignUp(Account accountToAdd)
+	{
+		//add a line to the text file adding the accountToAdd
+		//https://stackoverflow.com/questions/4614227/how-to-add-a-new-line-of-text-to-an-existing-file-in-java/9377891
+		String securityQA = accountToAdd.getAnswer();
+		if (securityQA.equals(""))
+		{
+			securityQA = "answer was not given";
+		}
+		String lineToAdd = accountToAdd.getUsername() + "-" + accountToAdd.getPassword() + "-" + securityQA;
+		try
+		{
+			Writer output = new BufferedWriter(new FileWriter("accounts/" + "all_the_accounts.txt", true));
+			output.append('\n');
+			output.append(lineToAdd);
+			//output.append('\n');
+			output.close();
+		}
+		catch (Exception e)
+		{
+			System.out.println("error accessing the file");
+		}
+		
+	}
+
 	
 	protected void btnNewPassSignInMouseClicked(MouseEvent e)
 	{
@@ -394,11 +462,46 @@ public class LockScreen extends JFrame {
 		else
 		{
 			accounts.setPassword(txtUsernameForgotPass.getText(), txtNewPasswordForgotPass.getText(), txtSecurityQuestionAnswerForgotPass.getText());
+			
+			updateTextFileNewPass(txtUsernameForgotPass.getText(), txtNewPasswordForgotPass.getText(), txtSecurityQuestionAnswerForgotPass.getText());
+			
 			selectingLevel = new SelectLevel(accounts.getAccount(txtUsernameForgotPass.getText()));
 			selectingLevel.setLocationRelativeTo(this);
 			selectingLevel.setVisible(true);
 			this.setVisible(false);
 		}
+	}
+	
+	private void updateTextFileNewPass(String username, String newPassword, String answer)
+	{
+		//change the line of the old account to this new password one
+		//https://stackoverflow.com/questions/20039980/java-replace-line-in-text-file
+		try
+		{
+	        BufferedReader file = new BufferedReader(new FileReader("accounts/" + "all_the_accounts.txt"));
+	        StringBuffer inputBuffer = new StringBuffer();
+	        String currentLine;
+
+	        while (file.ready())
+	        {
+	        	currentLine = file.readLine();
+	        	String[] lineParts = currentLine.split("-");
+				if(lineParts[0].equals(username))
+				{
+					currentLine = username + "-" + newPassword + "-" + answer;
+				}
+				inputBuffer.append(currentLine);
+	        }	
+			file.close();
+
+			FileOutputStream fileOut = new FileOutputStream("accounts/" + "all_the_accounts.txt");
+			fileOut.write(inputBuffer.toString().getBytes());
+			fileOut.close();
+		}
+	    catch (Exception e)
+		{
+	        System.out.println("Problem reading file.");
+	    }
 	}
 	
 	private boolean makeThePopUp(int number)
@@ -446,7 +549,7 @@ public class LockScreen extends JFrame {
 			String inputPassword = txtNewPasswordForgotPass.getText();
 			String securityQuestionAnswer = txtSecurityQuestionAnswerForgotPass.getText();
 			
-			if (!(accounts.canItGiveANewPassword(securityQuestionAnswer)))
+			if (!(accounts.canItGiveANewPassword(accounts.getOriginalSecurityQuestionAnswer(inputUsername))))
 			{
 				needsThePopUp = true;
 				line1 = "I told you! If you don't answer the security question,";
