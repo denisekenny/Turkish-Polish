@@ -526,16 +526,16 @@ public class LockScreen extends JFrame {
 			String inputPassword = txtNewPasswordForgotPass.getText();
 			String securityQuestionAnswer = txtSecurityQuestionAnswerForgotPass.getText();
 			
-			if (!(accounts.canItGiveANewPassword(accounts.getOriginalSecurityQuestionAnswer(inputUsername))))
+			if (!(accounts.usernameExists(inputUsername)))
+			{
+				needsThePopUp = true;
+				line1 = "There isn't an account with that username.";
+			}
+			else if (!(accounts.canItGiveANewPassword(accounts.getOriginalSecurityQuestionAnswer(inputUsername))))
 			{
 				needsThePopUp = true;
 				line1 = "I told you! If you don't answer the security question,";
 				line2 = "You better answer the security question!";
-			}
-			else if (!(accounts.usernameExists(inputUsername)))
-			{
-				needsThePopUp = true;
-				line1 = "There isn't an account with that username.";
 			}
 			else if (!(accounts.canItSetPassword(inputUsername, inputPassword, securityQuestionAnswer)))
 			{

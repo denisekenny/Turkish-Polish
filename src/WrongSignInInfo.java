@@ -26,7 +26,7 @@ public class WrongSignInInfo extends JDialog {
 	 * Create the dialog.
 	 */
 	public WrongSignInInfo(String line1, String line2, String suggestedUsername) {
-		setBounds(100, 100, 480, 188);
+		setBounds(100, 100, 600, 188);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(SystemColor.activeCaption);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -35,7 +35,7 @@ public class WrongSignInInfo extends JDialog {
 		{
 			lblMessageLineOne = new JLabel(line1);
 			lblMessageLineOne.setFont(new Font("Dialog", Font.PLAIN, 13));
-			lblMessageLineOne.setBounds(10, 11, 444, 25);
+			lblMessageLineOne.setBounds(10, 11, 500, 25);
 			contentPanel.add(lblMessageLineOne);
 		}
 		{
@@ -47,7 +47,7 @@ public class WrongSignInInfo extends JDialog {
 		{
 			lblMessageLineTwo = new JLabel(line2);
 			lblMessageLineTwo.setFont(new Font("Dialog", Font.PLAIN, 13));
-			lblMessageLineTwo.setBounds(10, 38, 444, 25);
+			lblMessageLineTwo.setBounds(10, 38, 500, 25);
 			contentPanel.add(lblMessageLineTwo);
 		}
 		{

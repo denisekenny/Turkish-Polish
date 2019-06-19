@@ -99,6 +99,7 @@ public class UsernamePassword
 	
 	public Account getAccount(String username)
 	{
+
 		int index = this.getIndex(username);
 		return allAccounts.get(index);
 	}

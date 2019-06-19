@@ -12,7 +12,7 @@ fig-incir-0-0
 vegetable-sebze-0-0
 spinach-ispanak-0-0
 eggplant-patlıcan-0-0
-mushrooms-mantar-0-0
+mushroom-mantar-0-0
 garlic-sarımsak-0-0
 artichoke-enginar-0-0
 olive-zeytin-0-0
